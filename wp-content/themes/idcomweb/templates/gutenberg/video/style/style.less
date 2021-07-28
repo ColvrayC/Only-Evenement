@@ -1,0 +1,213 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .video {
+            .transition(.25s);
+            display: block;
+            position: relative;
+            width: 100%;
+            h2 {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                margin-bottom: 32px;
+            }
+            .desc {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                color: @graydk;
+            }
+            .resp-video {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                padding-top: 56.25%;
+                > iframe {
+                    .transition(.25s);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .resp-video.local {
+                padding-top: 0;
+                .wp-video, video.wp-video-shortcode, .mejs-container, .mejs-overlay.load {
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+                .mejs-container {
+                    padding-top: 56.25%;
+                    background-color: #000!important;
+                }
+                .wp-video, video.wp-video-shortcode {
+                    max-width: 100% !important;
+                }
+                video.wp-video-shortcode {
+                    position: relative;
+                }
+                .mejs-mediaelement {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+                .mejs-controls {
+                    /*display: none;*/
+                }
+                .mejs-overlay-play {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: auto !important;
+                    height: auto !important;
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+            .video {
+                h2 {
+                    text-align: center;
+                }
+                .desc {
+                    margin-bottom: 32px;
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}

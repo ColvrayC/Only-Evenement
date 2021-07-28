@@ -1,0 +1,194 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .listsection {
+            .transition(.25s);
+            position: relative;
+            .section-title {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                font-weight: 400;
+                margin-bottom: 32px;
+                > span {
+                    .transition(.25s);
+                    display: inline-block;
+                    position: relative;
+                    padding: 0 24px;
+                }
+                > span::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateX(-100%);
+                    width: 300%;
+                    height: 1px;
+                    background: @cd;
+                }
+                > span::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateX(100%);
+                    width: 300%;
+                    height: 1px;
+                    background: @cd;
+                }
+            }
+            ul {
+                .transition(.25s);
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                color: @ab;
+                > li {
+                    padding: 8px 0;
+                    > i {
+                        color: @bc;
+                    }
+                }
+            }
+            ul.center {
+                text-align: center;
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+            .listsection {
+                ul {
+                    text-align: center;
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}

@@ -1,0 +1,298 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .section.freeslider {
+            .transition(.25s);
+            display: block;
+            position: relative;
+            width: 100%;
+            .the-slider {
+                position: relative;
+            }
+            .swiper-container {
+                position: relative;
+                z-index: 2;
+                > .swiper-wrapper {
+                    .swiper-slide {
+                        .transition(.25s);
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        > .data {
+                            .transition(.25s);
+                            display: block;
+                            position: relative;
+                            width: calc(~'100% - 20px');
+                            padding-top: 100%;
+                            margin: 10px auto;
+                            -webkit-box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.04);
+                            box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.04);
+                            overflow: hidden;
+                            > img {
+                                .transition(.5s);
+                            }
+                            > h1,
+                            > h2 {
+                                .transition(.5s);
+                                display: block;
+                                position: absolute;
+                                width: 80%;
+                                padding: 12px 20px;
+                                color: @ab;
+                                text-align: center;
+                                bottom: 10%;
+                                left: 10%;
+                                z-index: 2;
+                                font-family: @textfont;
+                                -webkit-box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.3);
+                                box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.3);
+                            }
+                        }
+                        > .data:hover {
+                            > img {
+                                .agrandir(1.2,1.2);
+                            }
+                            > h1,
+                            > h2 {
+                                .rotation3DX(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+            .swiper-button-prev,
+            .swiper-button-next {
+                .transition(.25s);
+                display: block;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                background: @ab;
+                color: @white;
+                z-index: 3;
+                outline: none;
+            }
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                .transition(.25s);
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 1em;
+            }
+            .swiper-button-prev:hover,
+            .swiper-button-next:hover {
+                background: @bc;
+            }
+            .swiper-button-prev {
+                transform: translateX(-120%);
+            }
+            .swiper-button-next {
+                transform: translateX(120%);
+            }
+            .swiper-pagination {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                z-index: 3;
+                > .swiper-pagination-bullet {
+                    .transition(.25s);
+                    display: inline-block;
+                    position: relative;
+                    width: 14px;
+                    height: 14px;
+                    margin: 4px;
+                    border-radius: 7px;
+                    background: transparent;
+                    border: solid 1px @ab;
+                    outline: none;
+                }
+                > .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                    background: @ab;
+                }
+            }
+            .bg {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                margin-top: -130px;
+                z-index: 1;
+                .breadcrumbs {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 18px;
+                    font-size: 13px;
+                    color: @fg;
+                    text-align: center;
+                    padding: 16px 0;
+                    transform: translateX(-50%);
+                    a {
+                        .transition(0.5s);
+                        color: @ab;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: @bc;
+                        text-decoration: none;
+                    }
+                    .fa-chevron-right {
+                        margin: 0 6px;
+                        color: rgb(180,180,180);
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (max-width: 1500px) {
+    
+    body{
+        
+        main {
+
+            .section.freeslider {
+                .swiper-button-prev {
+                    transform: translateX(-8px);
+                }
+                .swiper-button-next {
+                    transform: translateX(8px);
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}

@@ -1,0 +1,24 @@
+
+#page-locked {
+	width: 4em;
+}
+td.page-locked {
+	width: 4em;
+	padding-top: 10px;
+}
+.page-locked-notice .dashicons-lock {
+	margin-right: .4em;
+}
+
+.column-post-locked {
+	width: 3em;
+}
+.idcom_verrou+.row-actions{
+	display: none !important;
+}
+.idcom-page-locked .check-column label,.idcom-page-locked .check-column input{
+	display: none !important;	
+}
+.idcom-page-locked .row-actions{
+	display: none !important;
+}

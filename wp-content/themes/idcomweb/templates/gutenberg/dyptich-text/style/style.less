@@ -1,0 +1,373 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .section.dyptich-text {
+            .transition(.25s);
+            position: relative;
+            .data {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                > .pretitle {
+                    .transition(.25s);
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    color: @bc;
+                    text-transform: uppercase;
+                }
+                > .title {
+                    .transition(.25s);
+                    display: block;
+                    position: relative;
+                    margin-bottom: 32px;
+                    width: 100%;
+                    color: @ab;
+                }
+                > .tbtn {
+                    .transition(.25s);
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    padding: 32px 0;
+                    text-align: left;
+                }
+            }
+            .pictures {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                > .big-img {
+                    .transition(.5s);
+                    display: block;
+                    position: relative;
+                    width: 60%;
+                    padding-top: 60%;
+                    overflow: hidden;
+                    z-index: 1;
+                    > img {
+                        .transition(.5s);
+                    }
+                }
+                > .small-img {
+                    .transition(.5s);
+                    display: block;
+                    position: relative;
+                    width: 40%;
+                    padding-top: 40%;
+                    margin-top: -20%;
+                    margin-left: 40%;
+                    overflow: hidden;
+                    z-index: 2;
+                    > img {
+                        .transition(.5s);
+                    }
+                }
+                > .small-txt {
+                    .transition(.5s);
+                    display: block;
+                    position: relative;
+                    width: 40%;
+                    padding-top: 40%;
+                    margin-top: -20%;
+                    margin-left: 40%;
+                    overflow: hidden;
+                    z-index: 2;
+                    > .data {
+                        .transition(.25s);
+                        display: block;
+                        position: absolute;
+                        width: calc(~'100% - 32px');
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        z-index: 3;
+                        > p {
+                            .transition(.25s);
+                            display: block;
+                            position: relative;
+                            margin: 0;
+                            width: 100%;
+                            color: @ab;
+                            text-transform: uppercase;
+                            > i {
+                                .transition(.25s);
+                                font-size: 300%;
+                            }
+                        }
+                        > p.icon {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+            .pictures:hover {
+                > .big-img {
+                    width: 64%;
+                    padding-top: 64%;
+                    border-radius: 12px;
+                    -webkit-box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.15);
+                    box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.15);
+                    > img {
+                        .agrandir(1.1,1.1);
+                    }
+                }
+                > .small-img,
+                > .small-txt {
+                    margin-top: -24%;
+                    margin-left: 60%;
+                    border-radius: 12px;
+                    -webkit-box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.15);
+                    box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.15);
+                    > img {
+                        .agrandir(1.1,1.1);
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+            .section.dyptich-text {
+                .data {
+                    > .pretitle,
+                    > .title,
+                    > .tbtn {
+                        text-align: center;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+            .section.dyptich-text {
+                .pictures {
+                    > .small-txt {
+                        > .data {
+                            width: calc(~'100% - 20px');
+                            > p {
+                                font-size: 13px;
+                                > i {
+                                    font-size: 200%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+            .section.dyptich-text {
+                .pictures {
+                    > .small-txt {
+                        > .data {
+                            width: calc(~'100% - 14px');
+                            > p {
+                                font-size: 12px;
+                                > i {
+                                    font-size: 170%;
+                                }
+                            }
+                            > p.icon {
+                                margin-bottom: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+            .section.dyptich-text {
+                .pictures {
+                    > .small-txt {
+                        > .data {
+                            width: calc(~'100% - 12px');
+                            > p {
+                                font-size: 12px;
+                                > i {
+                                    font-size: 150%;
+                                }
+                            }
+                            > p.icon {
+                                margin-bottom: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+            .section.dyptich-text {
+                .pictures {
+                    > .small-txt {
+                        > .data {
+                            width: calc(~'100% - 10px');
+                            > p {
+                                font-size: 12px;
+                                > i {
+                                    font-size: 130%;
+                                }
+                            }
+                            > p.icon {
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 280px) {
+    
+    body{
+        
+        main {
+
+            .section.dyptich-text {
+                .pictures {
+                    > .small-txt {
+                        width: 40%;
+                        > .data {
+                            width: calc(~'100% - 8px');
+                            > p {
+                                font-size: 10px;
+                                > i {
+                                    font-size: 110%;
+                                }
+                            }
+                            > p.icon {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}

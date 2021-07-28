@@ -1,0 +1,206 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .related-posts {
+            .transition(.25s);
+            display: block;
+            position: relative;
+            width: 100%;
+            h2.section-title {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                color: @ab;
+                font-weight: 700;
+            }
+            .swiper-container {
+                background: @ab;
+                > .swiper-wrapper {
+                    .swiper-slide {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        a.picture {
+                            .transition(.35s);
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                            padding-top: 56.25%;
+                            overflow: hidden;
+                            > img {
+                                .transition(.35s);
+                            }
+                            > .data {
+                                .transition(.5s);
+                                background: @black;
+                                background: fade(@black, 80%);
+                                color: @white;
+                                display: block;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                z-index: 2;
+                                > h3 {
+                                    .transition(.25s);
+                                    display: block;
+                                    position: absolute;
+                                    max-width: 94%;
+                                    max-height: 94%;
+                                    top: -50%;
+                                    left: 50%;
+                                    transform: translate(-50%,-50%);
+                                    color: @white;
+                                    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+                                }
+                            }
+                        }
+                        a.picture:hover {
+                            > img {
+                                .agrandir(1.2,1.2);
+                            }
+                            > .data {
+                                opacity: 1;
+                                > h3 {
+                                    top: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .swiper-container.mgbottom {
+                margin-bottom: 48px;
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}

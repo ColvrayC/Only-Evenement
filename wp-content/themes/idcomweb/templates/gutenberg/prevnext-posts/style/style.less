@@ -1,0 +1,312 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        /* Post navigation */
+        .prev-next-posts {
+            z-index: 100;
+            .post-nav-left,
+            .post-nav-right {
+                .transition(0.25s);
+                display: block;
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 210px;
+                z-index: 3;
+                > .img {
+                    .transition(1s);
+                    display: block;
+                    position: relative;
+                    width: 180px;
+                    height: 180px;
+                    overflow: hidden;
+                    > .overlay {
+                        .transition(1s);
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background: @black;
+                        background: rgba(0,0,0,.8);
+                    }
+                }
+                > .arrow {
+                    .transition(0.25s);
+                    position: absolute;
+                    top: 0;
+                    width: 30px;
+                    height: 180px;
+                    background: @black;
+                    background: rgba(0,0,0,.4);
+                    color: @white;
+                    font-size: 150%;
+                    text-align: center;
+                    > i {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+                > .title {
+                    .transition(0.25s);
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    top: 180px;
+                    left: 0;
+                    background: @ab;
+                    color: @white;
+                    padding: 12px;
+                    font-size: 12px;
+                    opacity: 0;
+                    text-overflow: ellipsis;
+                }
+            }
+            .post-nav-left:hover,
+            .post-nav-right:hover {
+                width: 320px;
+                text-decoration: none;
+                > .arrow {
+                    width: 140px;
+                    background: @bc;
+                }
+                > .img {
+                    > .overlay {
+                        background: rgba(0,0,0,.1);
+                    }
+                }
+                > .title {
+                    opacity: 1;
+                }
+            }
+            .post-nav-left {
+                left: -180px;
+                > .arrow {
+                    right: 0;
+                }
+            }
+            .post-nav-right {
+                right: -180px;
+                > .img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                > .arrow {
+                    position: relative;
+                    display: block;
+                }
+                > .title {
+                    text-align: right;
+                }
+            }
+            .post-nav-left:hover {
+                left: 0;
+            }
+            .post-nav-right:hover {
+                right: 0;
+            }
+        }
+        /* END Post navigation */
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+            /* Post nav */
+            .prev-next-posts {
+                margin: 32px 0;
+                .post-nav-left,
+                .post-nav-right {
+                    background: @cd;
+                    position: relative;
+                    top: auto;
+                    transform: translateY(0);
+                    width: 100%;
+                    z-index: 1;
+                    > .img {
+                        display: block;
+                        position: relative;
+                        width: 90%;
+                        height: 120px;
+                        overflow: hidden;
+                    }
+                    > .arrow {
+                        display: block;
+                        position: relative;
+                        width: 10%;
+                        height: 120px;
+                        position: relative;
+                        background: @ab;
+                    }
+                    > .title {
+                        position: relative;
+                        top: auto;
+                        left: none;
+                        text-align: center;
+                        opacity: 1;
+                    }
+                }
+                .post-nav-left {
+                    left: 0;
+                    > .img {
+                        float: right;
+                    }
+                    > .arrow {
+                        right: 0;
+                    }
+                }
+                .post-nav-right {
+                    right: 0;
+                    > .arrow {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+                .post-nav-left:hover,
+                .post-nav-right:hover {
+                    width: 100%;
+                    text-decoration: none;
+                    > .arrow {
+                        width: 10%;
+                    }
+                    > .img {
+                        > .overlay {
+                            background: rgba(0,0,0,.1);
+                        }
+                    }
+                    > .title {
+                        background: @bc;
+                    }
+                }
+            }
+            /* END Post nav */
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}

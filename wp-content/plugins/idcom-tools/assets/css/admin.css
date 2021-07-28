@@ -1,0 +1,1862 @@
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotating {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 1s linear infinite;
+    -moz-animation: rotating 1s linear infinite;
+    -ms-animation: rotating 1s linear infinite;
+    -o-animation: rotating 1s linear infinite;
+    animation: rotating 1s linear infinite;
+}
+
+@keyframes zoominout {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.025,1.025);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes zoominandout {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes bounceup {
+    from { margin-top: 0; }
+    50%  { margin-top: -32px; }
+    to   { margin-top: 0; }
+}
+
+@keyframes bounceuplight {
+    from { margin-top: 0; }
+    50%  { margin-top: -6px; }
+    to   { margin-top: 0; }
+}
+
+@keyframes bouncedown {
+    from { margin-bottom: 0; }
+    50%  { margin-bottom: -32px; }
+    to   { margin-bottom: 0; }
+}
+
+#wpm-loader {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    background: rgba(255,255,255,.95);
+    z-index: 100000;
+}
+
+#wpm-loader > .wpm-loader {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    -webkit-animation: bounceup 1s ease infinite;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 120px;
+    height: auto;
+}
+
+#wpm-notice {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    background: rgba(255,255,255,.85);
+    z-index: 100000;
+}
+
+#wpm-notice > .wpm-notice {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 600px;
+    text-align: center;
+}
+
+#wpm-notice > .wpm-notice > .wpm-message {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: block;
+    position: relative;
+    width: auto;
+    padding: 20px;
+    background: rgb(240,240,240);
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+    text-align: justify;
+    text-align-last: center;
+}
+
+#wpm-notice > .wpm-notice > .wpm-message > .highlighted {
+    color: #0295f0;
+    font-weight: 700;
+}
+
+#wpm-notice > .wpm-notice > .wpm-message > .error {
+    color: rgb(235,0,0);
+    font-weight: 700;
+}
+
+#wpm-notice > .wpm-notice > .button {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: inline-block;
+    margin-top: 12px;
+    background: #0295f0;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 6px 16px;
+    outline: none;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25); 
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25);
+}
+
+#wpm-notice > .wpm-notice > .button:hover {
+    background: #f9b233;
+    color: #2d283b;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+}
+
+.wpm {
+    visibility: hidden;
+    display: flex;
+    width: auto;
+    padding: 0;
+    margin: 0 0 0 -20px;
+}
+
+#wpadminbar,
+#adminmenuback,
+#adminmenuwrap {
+    visibiliyt: hidden;
+}
+
+.wpm > .row,
+.wpm > .row.header,
+.wpm > .row.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wpm > .row.header,
+.wpm > .row.footer {
+    position: fixed;
+    z-index: 100;
+}
+
+.wpm > .row.footer {
+    bottom: 0;
+    right: 0;
+}
+
+.wpm > .row.header > .saving-notice {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f9b233;
+    color: #0a0024;
+    font-weight: 700;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25); 
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25);
+    z-index: 2;
+}
+
+.wpm > .row.header > .saving-notice > span {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.wpm > .row.header > .saving-notice > .loader {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 90%;
+    width: auto;
+    right: 10px;
+}
+
+.wpm > .row > .sidebar {
+    display: flex;
+    width: 224px;
+}
+
+.wpm > .row.header > .sidebar,
+.wpm > .row.footer > .sidebar {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: flex;
+    width: 200px;
+    background: #2d283b;
+    color: #f9b233;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.wpm > .row.header > .sidebar > img.logo,
+.wpm > .row.footer > .sidebar > img.logo {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: flex;
+    width: 18px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.wpm > .row.header > .sidebar .version {
+    color: #ffe13a;
+}
+
+.wpm > .row > .content,
+.wpm > .row.header > .content,
+.wpm > .row.footer > .content {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: flex;
+    width: calc(100vw - 406px);
+}
+
+.wpm > .row.settings > .content {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: flex;
+    width: calc(100vw - 382px);
+}
+
+.wpm > .row.settings {
+    align-items: start;
+}
+
+.wpm > .row.header > .content,
+.wpm > .row.footer > .content {
+    background: #0a0024;
+    color: #ffffff;
+    padding: 12px;
+}
+
+.wpm > .row.header > .content > span > i,
+.wpm > .row.footer > .content > span > i {
+    color: #64aedc;
+}
+
+.wpm > .row.header > .content > #save_settings,
+.wpm > .row.footer > .content > #plugin_link {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 12px;
+    border: none;
+    background: #0295f0;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.wpm > .row.footer > .content > #plugin_link {
+    text-decoration: none;
+    line-height: 3.2em;
+}
+
+.wpm > .row.header > .content > #save_settings:hover,
+.wpm > .row.footer > .content > #plugin_link:hover {
+    background: #f9b233;
+    color: #0a0024;
+    text-decoration: none;
+}
+
+.wpm > .row.settings {
+    position: relative;
+    margin-top: 42px;
+}
+
+.wpm > .row.settings > .sidebar {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25); 
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25);
+}
+
+.wpm > .row.settings > .sidebar > .setting {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: flex;
+    position: relative;
+    width: 200px;
+    margin: 0;
+    padding: 12px;
+    border: none;
+    font-weight: 500;
+    background: #64aedc;
+    border-bottom: solid 1px #94ccef;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+.wpm > .row.settings > .sidebar > .setting i {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    color: #0a0024;
+}
+
+.wpm > .row.settings > .sidebar > .setting > span > span {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.wpm > .row.settings > .sidebar > .setting.active {
+    background: #ffffff;
+    border-bottom: solid 1px transparent;
+}
+
+.wpm > .row.settings > .sidebar > .setting.active > span > span {
+    color: #0a0024;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.wpm > .row.settings > .sidebar > .setting:hover {
+    background: #f9b233;
+    border-bottom: solid 1px transparent;
+}
+
+.wpm > .row.settings > .sidebar > .setting:hover > span > span {
+    color: #0a0024;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.wpm > .row.settings > .content {
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25); 
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25);
+}
+
+.wpm > .row.settings > .content > .panel {
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+    display: none;
+    position: relative;
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+}
+
+.wpm > .row.settings > .content > .panel.active {
+    display: block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: flex;
+    position: relative;
+    align-items: start;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group:not(:last-child) {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: solid 1px rgb(230,230,230);
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .label {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: inline-block;
+    width: 250px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .label > .title {
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    color: #0a0024;
+    margin-bottom: 4px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .label > .info {
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 400;
+    color: #2d283b;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .label > .info > i {
+    color: #0295f0;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: inline-block;
+    position: relative;
+    width: calc(100% - 250px);
+    margin-left: 12px;
+}
+
+/* Chars counter */
+.wpm > .row.settings > .content > .panel > .form-group > .input > span.counter {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    display: inline-block;
+    margin-top: 4px;
+    background: rgb(165,165,165);
+    color: #ffffff;
+    padding: 1px 6px;
+    border-radius: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5) !important;
+    font-size: 11px;
+}
+
+/* CHECKBOX */
+.wpm > .row.settings > .content > .panel > .form-group > .input.checkbox input {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.checkbox span {
+    display: inline-block;
+    position: relative;
+    margin-left: 52px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.checkbox .slider {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.checkbox .slider::before {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    content: '';
+    background-color: #fff;
+    bottom: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    left: 2px;
+    position: absolute;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.checkbox input:checked + .slider {
+    background-color: #0295f0;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.checkbox input:checked + .slider::before {
+    transform: translateX(22px);
+}
+/* END CHECKBOX */
+
+/* RADIO BUTTONS */
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:checked,
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:not(:checked) {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:checked + span,
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:not(:checked) + span {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:checked + span::before,
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:not(:checked) + span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -3px;
+    width: 22px;
+    height: 22px;
+    background: #ccc;
+    border-radius: 11px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:not(:checked) + span::before {
+    background: #ccc;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:checked + span::before {
+    background: #0295f0;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:checked + span::after,
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:not(:checked) + span::after {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    top: -1px;
+    border-radius: 9px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio [type="radio"]:checked + span::after {
+    background: #ffffff;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio label {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.radio label:not(:last-child) {
+    margin-right: 12px;
+}
+/* END RADIO BUTTONS */
+
+/* TEXTFIELD */
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="text"],
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="email"],
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="password"],
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="number"],
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="tel"],
+.wpm > .row.settings > .content > .panel > .form-group > .input.textarea textarea {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    width: 100%;
+    border-radius: 6px;
+    outline: none;
+    background: #eef9ff;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.textarea textarea {
+    min-height: 30px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="text"].lg,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="email"].lg,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="password"].lg,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="number"].lg,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="tel"].lg,
+.wpm > .row.settings > .content > .panel > .form-group > .input.textarea textarea.lg {
+    width: 75%;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="text"].md,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="email"].md,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="password"].md,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="number"].md,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="tel"].md,
+.wpm > .row.settings > .content > .panel > .form-group > .input.textarea textarea.md {
+    width: 50%;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="text"].xs,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="email"].xs,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="password"].xs,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="number"].xs,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="tel"].xs,
+.wpm > .row.settings > .content > .panel > .form-group > .input.textarea textarea.xs {
+    width: 30%;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="text"]:focus,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="email"]:focus,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="password"]:focus,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="number"]:focus,
+.wpm > .row.settings > .content > .panel > .form-group > .input.text input[type="tel"]:focus,
+.wpm > .row.settings > .content > .panel > .form-group > .input.textarea textarea:focus {
+    background: #e3f3fd;
+}
+/* END TEXTFIELD */
+
+/* TAGS INPUT */
+.wpm > .row.settings > .content > .panel > .form-group > .input.text .tags > .tagsinput,
+div.tagsinput {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    padding: 8px !important;
+    border-radius: 6px !important;
+    outline: none !important;
+    background: #eef9ff !important;
+    border: 1px solid #7e8993 !important;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.text .tags > .tagsinput span.tag,
+div.tagsinput span.tag {
+    border: 1px solid #0295f0 !important;
+    background: #0295f0 !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5) !important;
+    font-family: sans-serif !important;
+    letter-spacing: 0.04em !important;
+    -webkit-border-radius: 8px !important;
+    border-radius: 8px !important;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.text .tags > .tagsinput span.tag a,
+div.tagsinput span.tag a {
+    font-weight: 400 !important;
+    transform: scaleX(1.15);
+}
+/* END TAGS INPUT */
+
+/* DATE PICKER */
+#ui-datepicker-div {
+    padding: 8px !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25); 
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25);
+}
+
+#ui-datepicker-div > .ui-datepicker-header > .ui-datepicker-prev,
+#ui-datepicker-div > .ui-datepicker-header > .ui-datepicker-next {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    cursor: pointer !important;
+    padding: 4px 16px !important;
+    background: transparent;
+    border-radius: 2px;
+}
+
+#ui-datepicker-div > .ui-datepicker-header > .ui-datepicker-prev:hover,
+#ui-datepicker-div > .ui-datepicker-header > .ui-datepicker-next:hover {
+    background: #0295f0;
+    color: #ffffff;
+}
+
+#ui-datepicker-div > .ui-datepicker-header > .ui-datepicker-next {
+    text-align: right;
+}
+
+#ui-datepicker-div > .ui-datepicker-header > .ui-datepicker-title {
+    text-align: center;
+    display: block;
+    position: relative;
+    padding: 4px;
+    background: #f9b233;
+    color: #0a0024;
+}
+
+#ui-datepicker-div > .ui-datepicker-calendar th,
+#ui-datepicker-div > .ui-datepicker-calendar td {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+#ui-datepicker-div > .ui-datepicker-calendar th a,
+#ui-datepicker-div > .ui-datepicker-calendar td a {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+#ui-datepicker-div > .ui-datepicker-calendar th a:hover,
+#ui-datepicker-div > .ui-datepicker-calendar td a:hover {
+    background: #0295f0;
+    color: #ffffff;
+}
+/* END DATE PICKER */
+
+/* SELECT (all variations) */
+.wpm > .row.settings > .content > .panel > .form-group > .input.select select {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    width: 100%;
+    min-width: 100%;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #0295f0 !important;
+    color: #ffffff !important;
+    border: solid 1px transparent !important;
+    padding: 4px 8px !important;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    position: relative !important;
+    top: -1px !important;
+    margin-right: 4px !important;
+    color: #ffffff !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: #f9b233 !important;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    margin-top: 12px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .positive,
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .negative {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    padding: 10px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .positive > p,
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .negative > p {
+    margin-bottom: 0;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .negative {
+    background: #2d283b;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .negative > h1,
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .negative > p {
+    color: #ffffff;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .positive > h1,
+.wpm > .row.settings > .content > .panel > .form-group > .input.select > .preview-font > .negative > h1 {
+    padding-top: 0;
+}
+/* END SELECT */
+
+/* IMAGE UPLOAD */
+.wpm > .row.settings > .content > .panel > .form-group > .input.img {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    position: relative;
+    background: rgb(240,240,240);
+    border-radius: 6px;
+    max-width: 400px;
+    max-height: 320px;
+    min-height: 220px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.img > .wpm-uploader {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.img > .wpm-uploader > .wpm-upload-img-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #0295f0;
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    z-index: 3;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.img > .wpm-uploader > .wpm-img-uploaded {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%,-50%);
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.img > .wpm-uploader > .wpm-upload-img-button:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.img > .wpm-uploader > .wpm-remove-image-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(235,0,0);
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.img > .wpm-uploader > .wpm-remove-image-button:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+/* END IMAGE UPLOAD */
+
+/* IMAGES GALLERY UPLOAD */
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic {
+    /*
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    */
+    display: inline-flex;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 10px 10px 0;
+    border-radius: 2px;
+    background: rgb(240,240,240);
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > .add {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #0295f0;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    z-index: 3;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > .add.hidden {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > .add:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > .remove {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(235,0,0);
+    color: #ffffff;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > .remove.visible {
+    display: block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > .remove:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .wpm-gallery > .pic > img {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 10px);
+    transform: translate(-50%,-50%);
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+/* END IMAGES GALLERY UPLOAD */
+
+/* ION RANGE SLIDER */
+.wpm > .row.settings > .content > .panel > .form-group > .input.ionrs > .irs > .irs-bar--single,
+.irs--flat .irs-bar--single,
+.irs--flat .irs-bar {
+    background-color: #0295f0 !important;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.ionrs > .irs > .irs-handle > i:first-child,
+.irs--flat .irs-handle > i:first-child {
+    background-color: #0295f0 !important;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.ionrs > .irs > .irs-single,
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
+    background-color: #0295f0 !important;
+}
+
+.irs--flat .irs-from:before, .irs--flat .irs-to:before, .irs--flat .irs-single:before {
+    border-top-color: #0295f0 !important;
+}
+/* END ION RANGE SLIDER */
+
+/* SINGLE AUDIO */
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    position: relative;
+    background: rgb(240,240,240);
+    border-radius: 6px;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-upload-audio-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    margin: 0 auto;
+    background: #0295f0;
+    color: #ffffff;
+    padding: 6px 24px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    z-index: 3;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-upload-audio-button.hidden {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-remove-audio-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    margin: 0 auto;
+    background: rgb(235,0,0);
+    color: #ffffff;
+    padding: 6px 24px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    z-index: 2;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-remove-audio-button.visible {
+    display: block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-upload-audio-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-remove-audio-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .play:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio-name {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    margin: 0;
+    padding-top: 6px;
+    color: #0295f0;
+    width: 40%;
+    text-overflow: ellipsis;
+    text-overflow: '…';
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    position: relative;
+    width: 40%;
+    height: 30px;
+    float: left;
+    outline: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio.visible {
+    display: block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio > audio {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    outline: none;
+}
+/* END SINGLE AUDIO */
+
+/* AUDIO PLAYLIST */
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .audio-player {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    background: rgb(240,240,240);
+    border-radius: 6px;
+    max-width: 100%;
+    padding: 10px 0 6px 0;
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .audio-player > audio {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    position: relative;
+    width: calc(100% - 12px);
+    padding: 0 6px;
+    height: 30px;
+    outline: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader {
+    /*
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    */
+    display: inline-block;
+    position: relative;
+    background: rgb(240,240,240);
+    width: calc(100% - 20px);
+    height: 30px;
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-upload-audio-track-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: inline-block;
+    margin: 0 auto;
+    background: #0295f0;
+    color: #ffffff;
+    padding: 6px 24px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    z-index: 3;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-upload-audio-track-button.hidden {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-remove-audio-track-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    margin: -30px auto 0 auto;
+    background: rgb(235,0,0);
+    color: #ffffff;
+    padding: 6px 24px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    z-index: 2;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-remove-audio-track-button.visible {
+    display: inline-block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    margin: 0;
+    padding: 0 10px;
+    background: #ffffff;
+    color: #0295f0;
+    width: 70%;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 2.2em;
+    text-overflow: ellipsis;
+    text-overflow: '…';
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name.active {
+    background: #0295f0;
+    color: #ffffff;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name.hidden {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name.visible {
+    display: block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-upload-audio-track-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-remove-audio-track-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+/* END AUDIO PLAYLIST */
+
+/* SINGLE VIDEO / VIDEOS PLAYLIST */
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    /* margin: -5px 10px; */
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos {
+    position: relative;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+    /*
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    */
+    display: block;
+    position: relative;
+    background: rgb(240,240,240);
+    border-radius: 6px;
+    width: 400px;
+    height: 225px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+    display: inline-block;
+    margin: 0 7.5px 10px 2.5px;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data > .remote-video,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data > .remote-video {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    width: 100%;
+    outline: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data > .cancel,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data > .cancel {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    position: absolute;
+    bottom : 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(235,0,0);
+    color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    outline: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .wpm-upload-video-button,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data > .wpm-upload-video-library,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .wpm-upload-video-button, 
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data > .wpm-upload-video-library {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #0295f0;
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 500;
+    outline: none;
+    z-index: 3;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .wpm-upload-video-button.hidden,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .wpm-upload-video-button.hidden {
+    display: none;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .wpm-remove-video-button,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .wpm-remove-video-button {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(235,0,0);
+    color: #ffffff;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .wpm-remove-video-button.visible,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .wpm-remove-video-button.visible {
+    display: block;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .local-video,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .local-video {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    background: #000000;
+    outline: none;
+    z-index: 1;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .wpm-upload-video-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader > .wpm-remove-video-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data > .wpm-upload-video-library:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data > .cancel:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .wpm-upload-video-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader > .wpm-remove-video-button:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data > .wpm-upload-video-library:hover,
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item > .wpm-video-playlist-uploader-data > .cancel:hover {
+    background: #f9b233;
+    color: #0a0024;
+}
+
+.wpm-remote-video {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    width: 100%;
+    padding-top: 53.94%;
+    overflow: hidden;
+    background: #000000;
+}
+
+.wpm-remote-video > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+/* END SINGLE VIDEO */
+
+/* VIDEO PLAYLIST */
+
+/* END VIDEO PLAYLIST */
+
+/* COUNTERS */
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .video-playlist-counter,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .audio-playlist-counter,
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .gallery-counter {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .audio-playlist-counter {
+    margin-top: 3px;
+    text-align: right;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .video-playlist-counter > span,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .audio-playlist-counter > span,
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .gallery-counter > span {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .video-playlist-counter > .count,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .audio-playlist-counter > .count,
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .gallery-counter > .count {
+    background: #0295f0;
+    font-weight: 600;
+}
+
+.wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .video-playlist-counter > .min,
+.wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .audio-playlist-counter > .min,
+.wpm > .row.settings > .content > .panel > .form-group > .input.gallery > .gallery-counter > .min {
+    background: rgb(235,0,0);
+}
+/* END COUNTERS */
+
+/* Media queries */
+@media (min-width: 1405px) and (max-width: 1485px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 360px;
+        height: 202.5px;
+    }
+    
+    .wpm-remote-video { padding-top: 53.676%; }
+    
+}
+
+@media (min-width: 1325px) and (max-width: 1404px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 320px;
+        height: 180px;
+    }
+    
+    .wpm-remote-video { padding-top: 53.333%; }
+    
+}
+
+@media (min-width: 1265px) and (max-width: 1324px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 290px;
+        height: 163.125px;
+    }
+    
+    .wpm-remote-video { padding-top: 53.011%; }
+    
+}
+
+@media (min-width: 1181px) and (max-width: 1264px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 244px;
+        height: 137.25px;
+    }
+    
+    .wpm-remote-video { padding-top: 52.343%; }
+    
+}
+
+@media (min-width: 1100px) and (max-width: 1180px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio {
+        width: 66%;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio-name {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 1099px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group {
+        display: block;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .label,
+    .wpm > .row.settings > .content > .panel > .form-group > .input {
+        width: 100%;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input {
+        margin: 12px 0 0 0;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio {
+        max-width: calc(100% - 20px);
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        margin: 0 0 10px 0;
+    }
+    
+}
+
+@media (max-width: 960px){
+    
+    .wpm > .row > .sidebar,
+    .wpm > .row.header > .sidebar,
+    .wpm > .row.footer > .sidebar {
+        width: 40px;
+        text-align: center;
+    }
+    
+    .wpm > .row.header > .sidebar > img.logo,
+    .wpm > .row.footer > .sidebar > img.logo {
+        margin: 0 auto;
+    }
+    
+    .wpm > .row.header > .sidebar > span,
+    .wpm > .row.footer > .sidebar > span {
+        display: none;
+    }
+    
+    .wpm > .row > .content,
+    .wpm > .row.header > .content,
+    .wpm > .row.footer > .content {
+        width: calc(100vw - 122px);
+    }
+    
+    .wpm > .row.settings > .content {
+        width: calc(100vw - 98px);
+        margin-left: 24px;
+    }
+    
+    .wpm > .row.settings > .sidebar > .setting {
+        width: 40px;
+        text-align: center;
+    }
+    
+    .wpm > .row.settings > .sidebar > .setting > span {
+        width: 100%;
+    }
+    
+    .wpm > .row.settings > .sidebar > .setting > span > span {
+        display: none;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 290px;
+        height: 163.125px;
+        margin: 0 7.5px 10px 2.5px;
+    }
+    
+    .wpm-remote-video { padding-top: 53.011%; }
+    
+}
+
+@media (max-width: 782px){
+    
+    .wpm {
+        margin: 0 0 0 -10px;
+    }
+    
+    .wpm > .row > .content,
+    .wpm > .row.header > .content,
+    .wpm > .row.footer > .content {
+        width: calc(100vw - 88px);
+    }
+    
+    .wpm > .row.settings > .content {
+        width: calc(100vw - 64px);
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 400px;
+        height: 225px;
+        margin: 0 0 10px 0;
+    }
+        
+}
+
+@media (max-width: 600px){
+    
+    #wpadminbar { position: fixed !important; }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio {
+        width: 66%;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio-name {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 500px){
+    
+    .wpm > .row.footer > .content > span > span {
+        display: none;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.radio label {
+        width: 100%;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name {
+        width: 60%;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video,
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 320px;
+        height: 180px;
+    }
+    
+}
+
+@media (max-width: 400px){
+        
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio,
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader {
+        border-radius: 6px;
+    }
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader {
+        height: auto;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .audio {
+        width: 100%;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio > .wpm-audio-uploader > .wpm-remove-audio-button {
+        margin-top: 6px;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .wpm-remove-audio-track-button {
+        margin: 12px auto 0 auto;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.audio-playlist > .wpm-audio-playlist > .wpm-audio-playlist-uploader > .audio-track-name {
+        width: calc(100% - 20px);
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video,
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 260px;
+        height: 146.25px;
+    }
+    
+}
+
+@media (max-width: 320px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 226px;
+        height: 127.125px;
+    }
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video > .wpm-video-uploader-data > .wpm-upload-video-library {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+    
+}
+
+@media (max-width: 280px){
+    
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video,
+    .wpm > .row.settings > .content > .panel > .form-group > .input.video-playlist > .videos > .video-item {
+        width: 200px;
+        height: 112.5px;
+    }
+    
+}

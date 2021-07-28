@@ -1,0 +1,451 @@
+.bozprod h1 {
+    font-weight: 700;
+    border-bottom: solid 1px rgb(235,0,0);
+}
+
+.bozprod h2, h3, h4, h5, h6 {
+    border-bottom: solid 1px rgb(235,0,0);
+}
+
+.bozprod h1 .stamplogo img {
+    width: 42px;
+    height: auto;
+    top: 0;
+    position: relative;
+    float: right;
+}
+
+.bozprod section {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    padding: 12px 12px;
+    background: #fff;
+    border-bottom: solid 1px rgb(200,200,200);
+    border-top-right-radius: 12px;
+}
+
+.bozprod section .header {
+    position: relative;
+    background: #252525;
+    color: #fff;
+    padding: 8px 12px;
+    border-top-right-radius: 10px;
+}
+
+.bozprod section .header h1,
+.bozprod section .header h2,
+.bozprod section .header h3,
+.bozprod section .header h4,
+.bozprod section .header h5,
+.bozprod section .header h6 {
+    color: rgb(235,0,0);
+}
+
+.bozprod .bg-primary {
+    background: #2d78dc;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bozprod .text-primary { color: #2d78dc; }
+
+.bozprod .bg-info {
+    background: #05c8c8;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bozprod .text-info { color: #05c8c8; }
+
+.bozprod .bg-success {
+    background: #05c896;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bozprod .text-success { color: #05c896; }
+
+.bozprod .bg-warning {
+    background: #e16400;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bozprod .text-warning { color: #e16400; }
+
+.bozprod .bg-danger {
+    background: #e11400;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bozprod .text-danger { color: #e11400; }
+
+.bozprod .bg-neutral {
+    background: #505050;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bozprod .text-neutral { color: #505050; }
+
+.bozprod .btn {
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    cursor: pointer;
+    border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.bozprod .btn:focus { outline: none; }
+
+.bozprod .btn-xs {
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+
+.bozprod .btn-sm {
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.bozprod .btn-md {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.bozprod .btn-lg {
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.bozprod .btn.bg-primary:hover {
+    background: #235dab;
+    color: #fff;
+}
+
+.bozprod .btn.bg-info:hover {
+    background: #039999;
+    color: #fff;
+}
+
+.bozprod .btn.bg-success:hover {
+    background: #049f77;
+    color: #fff;
+}
+
+.bozprod .btn.bg-warning:hover {
+    background: #b55202;
+    color: #fff;
+}
+
+.bozprod .btn.bg-danger:hover {
+    background: #aa0f00;
+    color: #fff;
+}
+
+.bozprod .btn.bg-neutral:hover {
+    background: #000000;
+    color: #fff;
+}
+
+section .tabs {
+    display: block;
+    position: relative;
+    background: #23282d;
+    float: left;
+}
+
+section .panels {
+    display: block;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+}
+
+section .panels .savedata {
+    display: block;
+    position: relative;
+    background: #23282d;
+    border-radius: 8px;
+}
+
+section .panels .savedata img.bozprodspinner {
+    display: block;
+    position: relative;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-top: 11px;
+    margin-left: 16px;
+}
+
+.spinrotate {
+    animation: roll 1s infinite;
+    transform: rotate(30deg);
+}
+
+#boz-site-heading-font-preview h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+#boz-site-text-font-preview p {
+    font-size: 16px;
+}
+
+.negatif {
+    background: rgb(48,48,48);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+#boz-site-menu-font-preview p {
+    font-size: 18px;
+}
+
+@keyframes roll {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+section .panels .savedata .btn {
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+section .panels .savedata .boznote {
+    margin-top: 11px;
+}
+
+section .panels .row {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    clear: both;
+}
+
+section .panels .row .footer {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 10px;
+    clear: both;
+    border-bottom: solid 1px rgb(220,220,220);
+}
+
+.form-label {
+    display: block;
+    position: relative;
+    float: left;
+    width: 30%;
+}
+
+.form-data {
+    display: block;
+    position: relative;
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+}
+
+.form-label label {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 2em;
+}
+
+.form-label span {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.form-data input[type="text"],
+.form-data select {
+    height: 32px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-data select {
+    cursor: pointer;
+}
+
+.form-data textarea {
+    border-radius: 4px;
+    width: 100%;
+    min-width: 100%;
+}
+
+.form-data .bozcolor {
+    display: block;
+    position: relative;
+    width: 72px;
+    height: 32px;
+    float: left;
+    margin: 6px 6px;
+    padding-bottom: 24px;
+    border: solid 2px rgb(0,0,0);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-data .bozcolor small {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+}
+
+.form-data .bozcolor small button {
+    display: block;
+    position: absolute;
+    width: 40%;
+    margin: 0 30%;
+    clear: both;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+
+.colorpicker {
+    z-index: 1000;
+}
+
+.form-data .bozcolor div {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 94%;
+    background: #fff;
+}
+
+.form-data .boz-radio {
+    display: block;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+section .panels .hidden {
+    display: none;
+}
+
+section .footer {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 12px 0 0 0;
+    clear: both;
+}
+
+section .tabs ul.boz-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+section .tabs ul.boz-menu li.li {
+    -webkit-transition: all 80ms ease-in;
+    -moz-transition: all 80ms ease-in;
+    -o-transition: all 80ms ease-in;
+    transition: all 80ms ease-in;
+    display: block;
+    position: relative;
+    padding: 8px 10px;
+    margin: 0;
+    border-bottom: solid 1px rgb(80,80,80);
+    clear: both;
+    cursor: pointer;
+}
+
+section .tabs ul.boz-menu li.selected,
+section .tabs ul.boz-menu li.li:hover {
+    background: rgb(245,245,245);
+}
+
+section .tabs ul.boz-menu li.li a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(245,245,245);
+}
+
+section .tabs ul.boz-menu li.li a .chevron {
+    float: right;
+}
+
+section .tabs ul.boz-menu li.selected a > i,
+section .tabs ul.boz-menu li.selected a > .chevron i,
+section .tabs ul.boz-menu li.li:hover a > i,
+section .tabs ul.boz-menu li.li:hover a > .chevron i {
+    color: rgb(235,0,0);
+}
+
+section .tabs ul.boz-menu li.selected a > .tab-title,
+section .tabs ul.boz-menu li.li:hover a > .tab-title {
+    color: rgb(25,25,25);
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.boznote {
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 0 12px;
+    display: none;
+}
+
+.bozuploader {
+    margin-top: 12px;
+}
+
+@media (min-width: 1121px){
+    
+    section .tabs {
+        width: 220px;
+    }
+    
+}
+
+@media (max-width: 1120px){
+    
+    section .tabs {
+        width: 48px;
+    }
+    
+    section .tabs ul.boz-menu li.li a i {
+        font-size: 24px;
+    }
+    
+    section .tabs ul.boz-menu li.li a .tab-title,
+    section .tabs ul.boz-menu li.li a .chevron {
+        display: none;
+    }
+    
+    .form-label {
+        width: 100%;
+    }
+
+    .form-data {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .form-label span {
+        margin-bottom: 10px;
+    }
+    
+    .form-data select[multiple] {
+        display: block;
+        position: relative;
+        height: 86px;
+    }
+
+}

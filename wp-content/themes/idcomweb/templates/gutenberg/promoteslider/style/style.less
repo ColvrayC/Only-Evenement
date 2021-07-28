@@ -1,0 +1,365 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .promoteslider {
+            .transition(.25s);
+            display: block;
+            position: relative;
+            width: 100%;
+            .section-title {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                width: 100%;
+                margin-bottom: 32px;
+                text-align: center;
+                > h2 {
+                    .transition(.25s);
+                    display: inline-block;
+                    position: relative;
+                    padding: 12px 24px;
+                    background: @white;
+                    color: @ab;
+                    font-weight: 700;
+                    -webkit-box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.08);
+                    box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.08);
+                }
+            }
+            .the-promote-slider {
+                .transition(.25s);
+                display: block;
+                position: relative;
+                .swiper-container {
+                    > .swiper-wrapper {
+                        .swiper-slide {
+                            .transition(.25s);
+                            .data {
+                                .transition(.25s);
+                                display: block;
+                                position: relative;
+                                width: 100%;
+                                padding: 0 12px;
+                                > .img {
+                                    .transition(.25s);
+                                    display: inline-block;
+                                    position: relative;
+                                    width: 40%;
+                                    padding-top: 40%;
+                                    overflow: hidden;
+                                    -webkit-box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.08);
+                                    box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.08);
+                                    > img {
+                                        .transition(.5s);
+                                    }
+                                }
+                                > .img:hover {
+                                    > img {
+                                        .agrandir(1.2,1.2);
+                                    }
+                                }
+                                > .content {
+                                    .transition(.25s);
+                                    display: inline-block;
+                                    position: relative;
+                                    width: 58%;
+                                    padding: 32px;
+                                    vertical-align: top;
+                                    > .pretitle {
+                                        .transition(.25s);
+                                        display: block;
+                                        position: relative;
+                                        width: 100%;
+                                        margin-bottom: 24px;
+                                        color: @bc;
+                                        letter-spacing: 0.08em;
+                                        text-transform: uppercase;
+                                    }
+                                    > h2 {
+                                        .transition(.25s);
+                                        display: block;
+                                        position: relative;
+                                        width: 100%;
+                                        margin-bottom: 24px;
+                                        font-weight: 400;
+                                    }
+                                    > .desc {
+                                        .transition(.25s);
+                                        display: block;
+                                        position: relative;
+                                        width: 100%;
+                                        margin-bottom: 24px;
+                                        color: @graydk;
+                                        line-height: 2em;
+                                    }
+                                    > .tbtn {
+                                        .transition(.25s);
+                                        display: block;
+                                        position: relative;
+                                        width: 100%;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .swiper-button-prev,
+                .swiper-button-next {
+                    .transition(.25s);
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                    background: @ab;
+                    color: @white;
+                    z-index: 3;
+                    outline: none;
+                }
+                .swiper-button-next:after,
+                .swiper-button-prev:after {
+                    .transition(.25s);
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 1em;
+                }
+                .swiper-button-prev:hover,
+                .swiper-button-next:hover {
+                    background: @bc;
+                }
+                .swiper-button-prev {
+                    transform: translateX(-120%);
+                }
+                .swiper-button-next {
+                    transform: translateX(120%);
+                }
+                .swiper-pagination {
+                    .transition(.25s);
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    margin-top: 24px;
+                    z-index: 3;
+                    > .swiper-pagination-bullet {
+                        .transition(.25s);
+                        display: inline-block;
+                        position: relative;
+                        width: 14px;
+                        height: 14px;
+                        margin: 4px;
+                        border-radius: 7px;
+                        background: transparent;
+                        border: solid 1px @ab;
+                        outline: none;
+                    }
+                    > .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                        background: @ab;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (max-width: 1500px) {
+    
+    body{
+        
+        main {
+
+            .promoteslider {
+                .the-promote-slider {
+                    .swiper-button-prev {
+                        transform: translateX(-12px);
+                    }
+                    .swiper-button-next {
+                        transform: translateX(12px);
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+                        
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+            .promoteslider {
+                .the-promote-slider {
+                    .swiper-container {
+                        > .swiper-wrapper {
+                            .swiper-slide {
+                                .data {
+                                    > .img {
+                                        width: 30%;
+                                        padding-top: 70%;
+                                    }
+                                    > .content {
+                                        width: 68%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+            .promoteslider {
+                .the-promote-slider {
+                    .swiper-container {
+                        > .swiper-wrapper {
+                            .swiper-slide {
+                                .data {
+                                    > .img {
+                                        display: block;
+                                        position: relative;
+                                        width: 100%;
+                                        padding-top: 40%;
+                                        margin-bottom: 24px;
+                                    }
+                                    > .content {
+                                        display: block;
+                                        position: relative;
+                                        width: 100%;
+                                        padding: 0 32px;
+                                        > .pretitle,
+                                        > h2,
+                                        > .tbtn {
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
