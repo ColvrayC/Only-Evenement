@@ -394,6 +394,35 @@ function idcom_register_acf_blocks(){
                 wp_enqueue_style('idcom-gtbg-contentadbanner', GUT.'contentadbanner/style/index.php', array(), IDCOMv, 'all');
             }
         ));
+
+        // Text + images section
+        acf_register_block_type(array(
+            'name'              => 'imgtext',
+            'title'             => __('Texte + images','idcomcrea'),
+            'render_template'   => $tpl.'imgtext/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','paragraphe','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-imgtext', GUT.'imgtext/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+        // Top Slider section
+        acf_register_block_type(array(
+            'name'              => 'topslider',
+            'title'             => __('Top Slider','idcomcrea'),
+            'render_template'   => $tpl.'topslider/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-topslider', GUT.'topslider/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
         
     }
     
@@ -408,6 +437,7 @@ function idcom_allowed_block_types($allowed_blocks){
 
     $arr = array(
         /* IDCOM */
+        'acf/imgtext',
         'acf/editor',
         'acf/titlebar',
         'acf/shortcode',
@@ -428,6 +458,7 @@ function idcom_allowed_block_types($allowed_blocks){
         'acf/instagramfeed',
         'acf/video',
         'acf/postmetas',
+        'acf/topslider',
         'acf/contentadbanner',
         /* GDPR Data Request Form */
         'gdpr/data-request-form'
