@@ -395,6 +395,20 @@ function idcom_register_acf_blocks(){
             }
         ));
 
+        // Text + images section + Background
+        acf_register_block_type(array(
+            'name'              => 'imgtextbg',
+            'title'             => __('Texte + images + Fond','idcomcrea'),
+            'render_template'   => $tpl.'imgtextbg/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','paragraphe','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-imgtextbg', GUT.'imgtextbg/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
         // Text + images section
         acf_register_block_type(array(
             'name'              => 'imgtext',
@@ -409,6 +423,8 @@ function idcom_register_acf_blocks(){
                 wp_enqueue_style('idcom-gtbg-imgtext', GUT.'imgtext/style/index.php', array(), IDCOMv, 'all');
             }
         ));
+        // Text + images
+
         // Top Slider section
         acf_register_block_type(array(
             'name'              => 'topslider',
@@ -438,6 +454,8 @@ function idcom_allowed_block_types($allowed_blocks){
     $arr = array(
         /* IDCOM */
         'acf/imgtext',
+        'acf/imgtextbg',
+        'acf/topslider',
         'acf/editor',
         'acf/titlebar',
         'acf/shortcode',
@@ -458,7 +476,6 @@ function idcom_allowed_block_types($allowed_blocks){
         'acf/instagramfeed',
         'acf/video',
         'acf/postmetas',
-        'acf/topslider',
         'acf/contentadbanner',
         /* GDPR Data Request Form */
         'gdpr/data-request-form'

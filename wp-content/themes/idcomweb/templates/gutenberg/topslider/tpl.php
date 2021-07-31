@@ -37,36 +37,46 @@ if(have_rows('slider')){
         the_row();
         $img        = get_sub_field('img');
 
+        
         $item = 
-        '<div class="swiper-slide">
+        
+        '
+        <div class="swiper-slide">
             <div class="img">
-                <img src="'.esc_url($img['url']).'" alt="'.esc_html($img['alt']).'" class="imgcrop"/>
-            </div>
-            <div class="data">
-                <img src="'.esc_url($subimg['url']).'" alt="'.esc_html($subimg['alt']).'" class="imgcrop"/>
-                <div class="overlay"></div>
-                <div class="content">
-                   
+                <div class="swiper-slide"> <img src="'.esc_url($img['url']).'" alt="'.esc_html($img['alt']).'" class=""/></div>
+                <div class="data">
+                    <img src="'.esc_url($img['url']).'" alt="'.esc_html($img['alt']).'" class=""/>
+                    <div class="overlay"></div>
+                    <div class="content">
+                    
+                    </div>
                 </div>
             </div>
-        </div>';
-        
+        </div>
+        ';
+
         $slider .= $item;
     }
 }
 
+if($slider != ''){
 ?>
-<section id="<?php echo esc_html($id); ?>" class="section wysiwyg wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s" data-idcom-js="idcomTopSlider">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 the-slider">
-                <div id="<?php echo esc_html($id); ?>-topslider-swiper" class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <?php echo $slider; ?>
+    <section  id="<?php echo esc_html($id); ?>-topslider" class="section topslider mht48 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s" data-idcom-js="idcomTopSlider">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 the-slider">
+                    <div id="<?php echo esc_html($id); ?>-topslider-swiper" class="swiper-container" style="height:500px">
+                        <div class="swiper-wrapper">
+                            <?php echo $slider; ?>
+                        </div>
                     </div>
+                    <div class="swiper-pagination"></div>
+                    
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+<?php
+}
+?>

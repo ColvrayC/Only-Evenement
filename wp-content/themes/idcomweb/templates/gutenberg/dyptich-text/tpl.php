@@ -63,9 +63,9 @@ if($right){
     
     $imgwow = 'Right';
     
-    $lft    = 'col-12 col-md-6 order-md-1 col-lg-6 order-lg-1';
+    $lft    = 'col-12 col-md-6 order-md-1 col-xxl-5 order-lg-1';
     
-    $rgt    = 'col-12 col-md-6 order-md-2 col-lg-6 order-lg-2';
+    $rgt    = 'col-12 col-md-6 order-md-2 col-xxl-7 order-lg-2';
     
 }
 
@@ -75,8 +75,14 @@ if($right){
         <div class="row">
             <div class="<?php echo $lft; ?>">
                 <div class="data">
-                    <span class="pretitle wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s"><?php echo $pretitle; ?></span>
-                    <h2 class="title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s"><?php echo $title; ?></h2>
+                    <?php if($pretitle != '') : ?>
+                    <span class="pretitle wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s">
+                        <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/start-quote.png">    
+                        <?php echo $pretitle; ?>
+                        <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/end-quote.png"/>
+                    </span>
+                    <?php endif; ?>
+                    <h2 class=" wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s"><?php echo $title; ?></h2>
                     <div class="desc wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s">
                         <?php echo $desc; ?>
                     </div>
@@ -94,18 +100,16 @@ if($right){
                     <div class="big-img wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.05s">
                         <img src="<?php echo esc_url($big['url']); ?>" alt="<?php echo esc_html($big['alt']); ?>" class="imgcrop"/>
                     </div>
-                    <?php if(!$istext) : ?>
+                    
                     <div class="small-img wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.25s">
+                        
                         <img src="<?php echo esc_url($small['url']); ?>" alt="<?php echo esc_html($small['alt']); ?>" class="imgcrop"/>
+                        
                     </div>
-                    <?php else : ?>
-                    <div class="small-txt cd-bg wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.25s">
-                        <div class="data">
-                            <p class="icon text-center"><i class="<?php echo $iclass; ?>"></i></p>
-                            <p class="text-center"><?php echo $small_txt ?></p>
-                        </div>
+                    <div class="small-img-bg-content small-img wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.25s">
+                        <div class="small-img-bg imgcrop"></div>
                     </div>
-                    <?php endif; ?>
+                  
                 </div>
             </div>
         </div>

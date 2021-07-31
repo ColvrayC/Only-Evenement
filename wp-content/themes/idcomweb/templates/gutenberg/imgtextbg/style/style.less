@@ -5,40 +5,32 @@ body{
     
     main {
         
-        .section.imgtext {
+        .section.imgtextbg {
             position: relative;
             padding-bottom: 7rem;
             background-repeat: no-repeat; 
             background-size: auto 100%;
-
-            .img{
-                display: block;
-                position: relative;
+            padding-top: 3rem;
+            img{
+                padding: 60px;
                 width: 100%;
-                height: 100%;
-                overflow: hidden;
-                > img {
-                    .transition(.25s);
-                    -webkit-animation: zoominandout 20s infinite linear;
-                    animation: zoominandout 20s infinite linear;
-                }
             }
+
+            
             .content {
-               
+                margin-top: 3rem;
                 .transition(.25s);
                 display: block;
                 position: relative;
                 width: 100%;
-                max-width: 700px;
+                padding: 72px;
                 background: transparent;
                 .heading {
                     .transition(.25s);
                     h2 {
                         .transition(.25s);
                         font-weight: @titlefont900;
-                        margin-bottom: 50px;
-                        font-size: 33px;
-                        color: @black;
+                        margin-bottom: 24px;
                         
                     }
                 }
@@ -46,24 +38,14 @@ body{
                     .transition(.25s);
                     display: block;
                     position: relative;
+                    width: 100%;
                     margin-top: 24px;
                     margin-bottom: 0;
-                    .btn-right{
-                        background: transparent;
-                        border: 1px solid @bc;
-                        color: @black;
-                        &:hover{
-                            background-color: @bc;
-                            color:@white;
-                        }
-                    }  
-                }
-                
-                .desc{
-                    p{
-                        letter-spacing: 1px;
-                    }
                     
+                }
+                .desc{
+                    color:@white;
+                    max-width: 525px;
                 }
             }
             .content.left::before,
@@ -94,8 +76,14 @@ body{
     body{
         
         main{
-          
-            
+            .section.imgtext {
+                img{
+                    padding: 40px 50px 40px 50px;
+                }
+                .content {
+                    margin-top: 0rem;
+                }
+            }
         }
         
     }
@@ -107,8 +95,15 @@ body{
     body {
        
         main {
-            
-            
+            .section.imgtext {
+                img{
+                    padding: 40px 50px 40px 50px;
+                }
+                .content {
+                    margin-top: 0rem;
+                    padding: 40px;
+                }
+            }
         }
         
     }
@@ -120,7 +115,15 @@ body{
     body {
         
         main {
-               
+            .section.imgtext {
+                img{
+                    padding: 40px 50px 40px 50px;
+                }
+                .content {
+                    margin-top: 0rem;
+                    padding: 40px;
+                }
+            }
 
         }
         
@@ -132,38 +135,25 @@ body{
     body{
         
         main {
-            h2{
-                text-align: center;
-            }
-            p{
-                text-align: center;
-            }
-           
-            
-        }
-        
-    }
-    
-}
-
-@media (max-width: 768px) {
-    
-    body{
-        
-        main {
-   
-            .tbtn{
-                text-align: center;
-            }
-            a{
-             width: 50%;   
+            .section.imgtext {
+                background-position: top;
+                padding-top: 0rem!important;
+                img{
+                    display: none;
+                }
+                .content{
+                    text-align: center;
+                    .desc{
+                        max-width: none;
+                    }
+                }
+                
             }
         }
         
     }
     
 }
-
 
 
 @media (max-width: 575px) {
@@ -171,8 +161,8 @@ body{
     body{
         
         main {
-            a{
-                width: 100%;   
+            .section.imgtext {
+                background-position: center center!important;
             }
         }
         
@@ -186,6 +176,11 @@ body{
         
         main {
 
+            .section.imgtext {
+                .content {
+                    padding: 24px;
+                }
+            }
             
         }
         

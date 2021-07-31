@@ -5,7 +5,7 @@ function idcomTopSlider(){
     var $ = jQuery.noConflict();
         
     $('.topslider').each(function(){
-        
+
         var $container  = $(this).attr('id');
         
         var $id         = $(this).attr('id')+'-swiper';
