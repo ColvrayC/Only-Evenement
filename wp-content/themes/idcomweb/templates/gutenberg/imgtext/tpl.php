@@ -29,28 +29,34 @@ $label_2    = esc_html(get_field('label_2'));
 
 $img        = get_field('img');
 
-$is_right     = get_field('is_right');
+$is_right   = get_field('is_right');
+
+$text_in_img  = get_field('text_in_img');
 
 
 
 ?>
-<section id="<?php echo esc_html($id); ?>" class="section imgtext mht96 mhb64 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s">
+<section id="<?php echo esc_html($id); ?>" class="section imgtext mht96 mhb64 pb-0 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s">
     <div class="container-fluid">
         <div class="row">
             <?php if($is_right) : ?>
-             <!-- Start Right Image -->
+             <!-- Start left Image -->
             <div class="col-12 col-lg-6 my-5 my-lg-0 text-center order-2 order-lg-1">
                 <div class="img">
-                    <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>"/>
+                    <?php if($text_in_img) : ?>
+                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>" class="img-with-text imgcrop" />
+                    <?php else : ?>
+                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>"  />
+                    <?php endif; ?>
                 </div>
             </div>
-            <!-- End Right Text -->
+            <!-- End left Text -->
 
             <!-- Start Right Text -->
             <div class="col-12 col-lg-6 order-1 order-lg-2">
                 <div class="content mx-auto">
                     <div class="heading">
-                        <h2><?php echo $title; ?></h2>
+                        <h4><?php echo $title; ?></h4>
                     </div>
                     <div class="desc mx-auto">
                         <?php echo $desc; ?>
@@ -85,13 +91,13 @@ $is_right     = get_field('is_right');
             <div class="col-12 col-lg-6">
                 <div class="content mx-auto">
                     <div class="heading">
-                        <h2><?php echo $title; ?></h2>
+                        <h3><?php echo $title; ?></h3>
                     </div>
-                    <div class="desc mx-auto">
+                    <div class="desc desc-left mx-auto">
                         <?php echo $desc; ?>
                     </div>
                     <?php if($link != '' && $label != '') : ?>
-                    <div class="d-flex justify-content-between">
+                    <div class="content-btns d-flex justify-content-between">
                         <p class="tbtn">
                             <a href="<?php echo $link; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase"><?php echo $label; ?></a>
                         </p>
@@ -110,13 +116,17 @@ $is_right     = get_field('is_right');
             </div>
             <!-- End Left Text -->
 
-            <!-- Start Left Image -->
+            <!-- Start right Image -->
             <div class="col-12 col-lg-6 mt-5 mt-lg-0 text-center">
                 <div class="img">
-                    <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>"/>
+                    <?php if($text_in_img) : ?>
+                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>" class="img-with-text imgcrop" />
+                    <?php else : ?>
+                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>"  />
+                    <?php endif; ?>
                 </div>
             </div>
-            <!-- End Left Text -->
+            <!-- End right Text -->
 
            
             <?php endif; ?>

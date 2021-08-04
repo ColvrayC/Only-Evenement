@@ -439,6 +439,94 @@ function idcom_register_acf_blocks(){
                 wp_enqueue_style('idcom-gtbg-topslider', GUT.'topslider/style/index.php', array(), IDCOMv, 'all');
             }
         ));
+
+         // Gallery
+         acf_register_block_type(array(
+            'name'              => 'gallery',
+            'title'             => __('Galerie','idcomcrea'),
+            'render_template'   => $tpl.'gallery/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-gallery', GUT.'gallery/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+        // Header Imgs
+        acf_register_block_type(array(
+            'name'              => 'headerimgs',
+            'title'             => __('En tête images','idcomcrea'),
+            'render_template'   => $tpl.'headerimgs/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-headerimgs', GUT.'headerimgs/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+
+        // Contact
+        acf_register_block_type(array(
+            'name'              => 'contact',
+            'title'             => __('Contact','idcomcrea'),
+            'render_template'   => $tpl.'contact/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-contact', GUT.'contact/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+
+        // Display Testimonials
+        acf_register_block_type(array(
+            'name'              => 'testimonials',
+            'title'             => __('Témoignages','idcomcrea'),
+            'render_template'   => $tpl.'testimonials/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-testimonials', GUT.'testimonials/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+
+        // Form Testimonials
+        acf_register_block_type(array(
+            'name'              => 'testimonial-form',
+            'title'             => __('Témoignage Formulaire','idcomcrea'),
+            'render_template'   => $tpl.'testimonial-form/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-testimonial-form', GUT.'testimonial-form/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+        // Offer
+        acf_register_block_type(array(
+            'name'              => 'offer',
+            'title'             => __('Offre','idcomcrea'),
+            'render_template'   => $tpl.'offer/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-offer', GUT.'offer/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
         
     }
     
@@ -455,8 +543,14 @@ function idcom_allowed_block_types($allowed_blocks){
         /* IDCOM */
         'acf/imgtext',
         'acf/imgtextbg',
+        'acf/contact',
+        'acf/offer',
+        'acf/testimonials',
+        'acf/testimonial-form',
         'acf/topslider',
+        'acf/headerimgs',
         'acf/editor',
+        'acf/gallery',
         'acf/titlebar',
         'acf/shortcode',
         'acf/firsttitle',

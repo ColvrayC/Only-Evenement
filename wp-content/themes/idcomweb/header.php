@@ -121,99 +121,80 @@ idcom_count_views();
     <?php wp_enqueue_script("jquery"); ?>
 
     <?php wp_head(); ?>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap">
 </head>
 
 <body <?php body_class(); ?> data-barba="wrapper">
-
+    <!-- Start top header -->
+    <div class="container-fluid">
+       
+    </div>   
+    <!-- End top header -->
     <div class="main-container" data-barba="container" data-barba-namespace="<?php echo idcom_create_current_slug(); ?>">
-
         <header class="main-header">
+            
+            <!-- Header container -->
+            <div class="container-fluid">
+                 <!-- Start top header -->
+                <div class="row top-header">
+                    <div class="d-flex flex-row-reverse px-0">
+                        <!-- CTA Phone -->
+                        <div class="py-2 px-4 cta-phone">
+                            <a href="tel:<?php echo $site_data['mobile'] ?>"><i class="fas fa-phone-volume me-2"></i><?php echo $site_data['mobile']?></a>
+                        </div>
 
-            <div class="container">
+                        <!-- Social share buttons -->
+                        <div class="p-2">
+                            <?php if($site_data['facebook'] != '') : ?>
 
-                <div class="row">
+                            <a href="<?php echo esc_url($site_data['facebook']); ?>" class="right-btn" title="<?php echo esc_html('Facebook'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
 
-                    <!-- Header logo -->
+                            <?php endif; ?>
 
-                    <div class="ccol ccol-25 ccol-md-25 ccol-sm-25 ccol-xs-50 ccol-xx-50">
+                            <?php if($site_data['instagram'] != '') : ?>
 
-                        <a href="<?php echo home_url('/'); ?>" class="main-logo wow fadeInDown" data-wow-duration="0.35s" data-wow-delay="0.5s" title="<?php echo get_bloginfo(); ?>">
+                            <a href="<?php echo esc_url($site_data['instagram']); ?>" class="right-btn" title="<?php echo esc_html('Instagram'); ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
 
-                            <?php the_header_logo(); ?>
+                            <?php endif; ?>
 
-                        </a>
+                            <?php if($site_data['twitter'] != '') : ?>
 
+                            <a href="<?php echo esc_url($site_data['twitter']); ?>" class="right-btn" title="<?php echo esc_html('Twitter'); ?>" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+
+                            <?php endif; ?>
+
+                            <?php if($site_data['pinterest'] != '') : ?>
+
+                            <a href="<?php echo esc_url($site_data['pinterest']); ?>" class="right-btn" title="<?php echo esc_html('Pinterest'); ?>" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
+
+                            <?php endif; ?>
+
+                            <?php if($site_data['tumblr'] != '') : ?>
+
+                            <a href="<?php echo esc_url($site_data['tumblr']); ?>" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank" rel="noopener"><i class="fab fa-tumblr"></i></a>
+
+                            <?php endif; ?>
+
+                            <?php if($site_data['rss']) : ?>
+
+                            <a href="/feed/" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank"><i class="fas fa-rss"></i></a>
+
+                            <?php endif; ?>
+                        </div>
                     </div>
-
+                </div>
+                <!-- Start main header -->
+                <div class="row">
                     <!-- Main menu -->
 
-                    <div class="ccol ccol-50 ccol-md-50 ccol-sm-50 ccol-xs-50 ccol-xx-50">
+                    <div class="mx-auto ccol ccol-50 ccol-md-50 ccol-sm-50 ccol-xs-50 ccol-xx-50">
 
                         <?php idcomtheme_header_menu(3); ?>
 
                     </div>
 
-                    <div class="ccol ccol-25 ccol-md-25 ccol-sm-25 ccol-xs-100 ccol-xx-100 right-buttons">
-
-                        <!-- Search form button -->
-
-                        <a href="javascript:void(0);" class="right-btn search-the-site"><i class="fas fa-search"></i></a>
-
-                        <?php if(idcom_preview_cart_is_active()) : ?>
-
-                        <!-- Preview cart button -->
-
-                        <a href="javascript:void(0);" id="gotocheckout" class="right-btn" title="<?php echo esc_html('Mon panier','idcomcrea'); ?>">
-
-                            <i class="fas fa-shopping-cart"></i><span class="badge<?php echo $cart_class; ?>"><?php echo $cart_count; ?></span>
-
-                        </a>
-
-                        <?php endif; ?>
-
-                        <!-- Social share buttons -->
-
-                        <?php if($site_data['facebook'] != '') : ?>
-
-                        <a href="<?php echo esc_url($site_data['facebook']); ?>" class="right-btn" title="<?php echo esc_html('Facebook'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-
-                        <?php endif; ?>
-
-                        <?php if($site_data['instagram'] != '') : ?>
-
-                        <a href="<?php echo esc_url($site_data['instagram']); ?>" class="right-btn" title="<?php echo esc_html('Instagram'); ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-
-                        <?php endif; ?>
-
-                        <?php if($site_data['twitter'] != '') : ?>
-
-                        <a href="<?php echo esc_url($site_data['twitter']); ?>" class="right-btn" title="<?php echo esc_html('Twitter'); ?>" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-
-                        <?php endif; ?>
-
-                        <?php if($site_data['pinterest'] != '') : ?>
-
-                        <a href="<?php echo esc_url($site_data['pinterest']); ?>" class="right-btn" title="<?php echo esc_html('Pinterest'); ?>" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
-
-                        <?php endif; ?>
-
-                        <?php if($site_data['tumblr'] != '') : ?>
-
-                        <a href="<?php echo esc_url($site_data['tumblr']); ?>" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank" rel="noopener"><i class="fab fa-tumblr"></i></a>
-
-                        <?php endif; ?>
-
-                        <?php if($site_data['rss']) : ?>
-
-                        <a href="/feed/" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank"><i class="fas fa-rss"></i></a>
-
-                        <?php endif; ?>
-
-                    </div>
-
                 </div>
-
+                <!-- End main header -->
             </div>
 
         </header>

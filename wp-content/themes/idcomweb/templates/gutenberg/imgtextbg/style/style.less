@@ -16,7 +16,6 @@ body{
                 width: 100%;
             }
 
-            
             .content {
                 margin-top: 3rem;
                 .transition(.25s);
@@ -25,6 +24,7 @@ body{
                 width: 100%;
                 padding: 72px;
                 background: transparent;
+                
                 .heading {
                     .transition(.25s);
                     h2 {
@@ -42,10 +42,25 @@ body{
                     margin-top: 24px;
                     margin-bottom: 0;
                     
+                    .btn-right{
+                        background: transparent;
+                        border: 1px solid @bc;
+                        color: @white;
+                        font-size: 15px;
+                        padding: 12px 17px;
+                        &:hover{
+                            background-color: @bc;
+                            color:@white;
+                        }
+                    }  
+                    
+                }
+                .pictures{
+                    margin-top:-25%
                 }
                 .desc{
                     color:@white;
-                    max-width: 525px;
+                    /*max-width: 525px;*/
                 }
             }
             .content.left::before,
@@ -64,6 +79,22 @@ body{
             }
             .content.right::before {
                 left: -1px;
+            }
+
+            .img-line{
+                position: absolute;
+                bottom: -1rem;
+                right: -55px;
+                padding: 0;
+            }
+            .img-line-right{
+                bottom: -10%;
+                z-index: 1;
+                right:none;
+            }
+            .img-line-whith-subtitles{
+                bottom: -5rem;
+                right: 0px;
             }
         }
         
@@ -112,42 +143,66 @@ body{
 
 @media (min-width: 992px) and (max-width: 1199px) {
     
-    body {
-        
-        main {
-            .section.imgtext {
-                img{
-                    padding: 40px 50px 40px 50px;
-                }
-                .content {
-                    margin-top: 0rem;
-                    padding: 40px;
+
+}
+@media (max-width: 1500px){
+    body{
+        main{
+            .section.imgtextbg{
+                .img-line-right{
+                    bottom: -2%;
                 }
             }
-
         }
-        
     }
 }
+
+@media (max-width: 1199px) {
+    body{
+         main{
+             .section.imgtextbg{
+                 .content{
+                     margin-top: 0;
+                     padding: 40px 0px 0px 0px;
+                     h2{
+                         text-align: center;
+                     }
+                 }
+                
+             } 
+         }
+    }
+ }
 
 @media (max-width: 992px) {
     
     body{
         
         main {
-            .section.imgtext {
+            .section.imgtextbg {
                 background-position: top;
                 padding-top: 0rem!important;
                 img{
-                    display: none;
+                    display: none!important;
                 }
                 .content{
                     text-align: center;
                     .desc{
                         max-width: none;
+                        padding: 0px 13%;
                     }
                 }
-                
+                .img-line{
+                    display: none;
+
+                }
+                .content-btns{
+                    display: block!important;
+                    a{
+                        width: 50%;
+                    }
+                }
+
             }
         }
         
@@ -161,8 +216,19 @@ body{
     body{
         
         main {
-            .section.imgtext {
+            .section.imgtextbg {
                 background-position: center center!important;
+                margin-left: 0%!important;
+                margin-right: 0%!important;
+                background-position: center center;
+                a{
+                    width: 100%!important;
+                }
+                .content{
+                    .desc{
+                        padding: 0px 0px;
+                    }
+                }
             }
         }
         

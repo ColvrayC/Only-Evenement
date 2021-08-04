@@ -12,7 +12,21 @@ body{
                 color:@black!important;
                 margin-bottom: 30px;
             }
+            .pretitle {
+                .transition(.25s);
+                display: block;
+                position: absolute;
+                display: none;
+                top: -33%;
+                left: 14%;
+                z-index: 3;
+                width: 100%;
+                font-size: 31px;
+                color: black;
+            }
+
             .data {
+                
                 .quote{
                     
                 }
@@ -20,17 +34,7 @@ body{
                 display: block;
                 position: relative;
                 width: 100%;
-                > .pretitle {
-                    .transition(.25s);
-                    display: block;
-                    position: absolute;
-                    top: -8%;
-                    z-index: 3;
-                    width: 100%;
-                    margin-bottom: 20px;
-                    color: @bc;
-                    text-transform: uppercase;
-                }
+                margin-bottom: 40%;
                 > .title {
                     .transition(.25s);
                     display: block;
@@ -39,13 +43,25 @@ body{
                     width: 100%;
                     color: @ab;
                 }
-                > .tbtn {
+                .tbtn {
                     .transition(.25s);
                     display: block;
                     position: relative;
                     width: 100%;
-                    padding: 32px 0;
                     text-align: left;
+                    
+                    .btn-right{
+                        background: transparent;
+                        border: 1px solid @bc;
+                        color: @black;
+                        font-size: 15px;
+                        padding: 12px 17px;
+                        &:hover{
+                            background-color: @bc;
+                            color:@white;
+                        }
+                    }  
+
                 }
             }
             .pictures {
@@ -53,6 +69,7 @@ body{
                 display: block;
                 position: relative;
                 width: 100%;
+                margin-top:-25%;
                 > .big-img {
                     .transition(.5s);
                     display: block;
@@ -170,6 +187,12 @@ body{
                     }
                 }
             }
+            .img-spotted{
+                position: absolute;
+                top: 25rem;
+                right: 7%;
+                z-index: -1;
+            }
         }
         
     }
@@ -254,6 +277,12 @@ body{
     body{
         
         main {
+            h2{
+                text-align: center;
+            }
+            .tbtn{
+                text-align: center!important;   
+            }
             .small-img{
                 display: none!important;
             }
@@ -268,7 +297,21 @@ body{
         }
     }
 }
-
+@media (max-width: 992px){
+    body{
+        main{
+            .section.dyptich-text {
+                .content-btns{
+                    display: block!important;
+                    a{
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+    
+}
 @media (max-width: 767.98px) {
     
     body{
@@ -276,12 +319,19 @@ body{
         main {
 
             .section.dyptich-text {
+                .desc{
+                    padding: 0px 13%;
+                    text-align: center;
+                }
                 .data {
                     > .pretitle,
                     > .title,
                     > .tbtn {
                         text-align: center;
                     }
+                }
+                .img-spotted{
+                   display: none;
                 }
             }
             
@@ -298,6 +348,12 @@ body{
         main {
 
             .section.dyptich-text {
+                .desc{
+                    padding: 0px 0px;
+                }
+                a{
+                    width: 100%!important;
+                }
                 .pictures {
                     > .small-txt {
                         > .data {

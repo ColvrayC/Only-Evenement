@@ -41,11 +41,11 @@
 @alpha:     75%;
 
 /* Primary color ( bleu marine ) */
-@ab:        #11003c;
+@ab:        #c78561;
 @ab-a:      fade(@ab, @alpha);
-@ab-lt:     #210665;
+@ab-lt:     #c29176;
 @ab-lt-a:   fade(@ab-lt, @alpha);
-@ab-dk:     #0a0024;
+@ab-dk:     #c27850;
 @ab-dk-a:   fade(@ab-dk, @alpha);
 
 /* Secondary color ( bleu clair ) */
@@ -57,27 +57,27 @@
 @bc-dk-a:   fade(@bc-dk, @alpha);
 
 /* Tertiary color ( violet ) */
-@cd:        #dc00f6;
+@cd:        #dba87b;
 @cd-a:      fade(@cd, @alpha);
-@cd-lt:     #eb70f9;
+@cd-lt:     #dba87b;
 @cd-lt-a:   fade(@cd-lt, @alpha);
-@cd-dk:     #c402db;
+@cd-dk:     #cf8d53;
 @cd-dk-a:   fade(@cd-dk, @alpha);
 
 /* Quaternary color ( jaune ) */
-@de:        #f9b233;
+@de:        #aeb0b5;
 @de-a:      fade(@de, @alpha);
-@de-lt:     #fbca72;
+@de-lt:     #b6b6b6;
 @de-lt-a:   fade(@de-lt, @alpha);
-@de-dk:     #f29c01;
+@de-dk:     #000000;
 @de-dk-a:   fade(@de-dk, @alpha);
 
 /* Quinternary color ( cyan ) */
-@ef:        #00b0c0;
+@ef:        #b88f7c;
 @ef-a:      fade(@ef, @alpha);
-@ef-lt:     #1fd9ea;
+@ef-lt:     #b8a196;
 @ef-lt-a:   fade(@ef-lt, @alpha);
-@ef-dk:     #0195a3;
+@ef-dk:     #b8856d;
 @ef-dk-a:   fade(@ef-dk, @alpha);
 
 /* Sixenary color ( rose ) */
@@ -283,15 +283,12 @@
 /* END Site colors */
 
 /* Site fonts */
-@font-face {
-    font-family: 'Amiri-font';
-    src: url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
-}
+
 @titlefont: 'Amiri-font', sans-serif;
 @titlefonth1: 48px;
 @titlefonth2: 43px;
-@titlefonth3: 37px;
-@titlefonth4: 32px;
+@titlefonth3: 33px;
+@titlefonth4: 17px;
 @titlefonth5: 27px;
 @titlefonth6: 21px;
 @titlefont100: 100;
@@ -386,10 +383,39 @@ body {
     color: @black;
     
         
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3{
         font-family: @titlefont;
-        color: @bc;
+        font-family: 'Amiri', sans-serif;
+        color: @ab;
+    } 
+    
+    h4, h5, h6 {
+        font-family: 'montserrat', sans-serif;
+        text-transform: uppercase;
+        color: @ab;
     }
+    h1{
+        font-size: @titlefonth1;
+    }
+    h2{
+        font-size: @titlefonth2;
+    }
+    h3{
+        font-size: @titlefonth3;
+        
+    }
+    h4{
+        font-size: @titlefonth4;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    h5{
+        font-size: @titlefonth5;
+    }
+    h6{
+        font-size: @titlefonth5;
+    }
+
     h1, .fakeh1 { font-size: @titlefonth1; line-height: normal; }
     h2, .fakeh2 { font-size: @titlefonth2; line-height: normal; }
     h3, .fakeh3 { font-size: @titlefonth3; line-height: normal; }
@@ -404,8 +430,8 @@ body {
     a { .transition(.35s); }
     a:hover { text-decoration: none; }
     
-    a { color: @ab; }
-    a:hover { color: @bc; }
+    a { color: @de; }
+    a:hover { color: @de-dk; }
     
     /* Buttons */
     p{
@@ -457,9 +483,11 @@ body {
     
     /* Primary */
     .btn-primary {
-        background: @ab;
-        color: @white;
-        border: solid 1px @ab;
+        background: @bc!important;
+        color: @white!important;
+        border: solid 1px @bc!important;
+        width: 100%!important;
+        margin-top: 10px;
     }
     
     .btn-primary:hover,
@@ -684,10 +712,10 @@ body {
             display: block;
             position: relative;
             width: 100%;
-            margin-bottom: 12px;
-            font-family: @titlefont;
+            margin-bottom: 22px;
+            font-size: 14px;
             font-weight: 600;
-            color: @ab;
+            color: @black;
             .wpcf7-list-item-label {
                 .transition(.25s);
                 color: @ab;
@@ -701,18 +729,22 @@ body {
             input[type="text"],
             input[type="tel"],
             input[type="email"],
+            input[type="date"],
+            select,
             textarea {
                 .transition(.25s);
                 display: block;
                 position: relative;
                 width: 100%;
                 padding: 8px 12px;
-                border: solid 1px transparent;
-                background: @ef;
+                border: solid 1px @bc;
+                background: transparent;
                 outline: none;
-                color: @ab;
+                color: @black;
+                margin-top: 10px;
                 font-family: @textfont;
             }
+
             textarea::placeholder,
             input::placeholder {
                 .transition(.25s);
@@ -805,7 +837,9 @@ body {
     .blackltbg.alpha { background: rgba(60,60,60,.75); }
     .blackdkbg { background: @blackdk; }
     .blackdkbg.alpha { background: rgba(0,0,0,.75); }
-    
+    .black-color{
+        color:@black!important;
+    }
     .graybg,
     .grayltbg,
     .graydkbg {

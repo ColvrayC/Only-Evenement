@@ -17,19 +17,49 @@ $id         = get_field('id');
 
 $title      = esc_html(get_field('title'));
 
-$desc       = wp_kses_post(get_field('desc'));
+$texts       = wp_kses_post(get_field('texts'));
 
 $link       = esc_url(get_field('link'));
 
 $label      = esc_html(get_field('label'));
 
+$link_2       = esc_url(get_field('link_2'));
+
+$label_2      = esc_html(get_field('label_2'));
+
 $bg     = get_field('bg');
 
 $img      = get_field('img');
 
-
 $testimonials   = get_field('testimonials');
 
+$container_text = '';
+
+$has_subtitle = false;
+if(have_rows('texts')){
+    while(have_rows('texts')){
+        the_row();
+
+        $subtitle  = get_sub_field('subtitle');
+
+        $description  = get_sub_field('description');
+        if($subtitle != ''){
+            $has_subtitle = true;
+            $item = 
+            '
+            <h4>'.$subtitle.'</h4>
+            <p>'.$description.'</p>
+            ';
+        }
+        else{
+            $item = 
+            '
+            <p>'.$description.'</p>
+            ';
+        }
+        $container_text .= $item;
+    }
+}
 
 ?>
 <section id="<?php echo esc_html($id); ?>" class="section imgtextbg mht96 mhb64 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s" style="background-image: url(<?php echo esc_url($bg['url']); ?>);<?php if($testimonials == false) : ?>margin-left: 2%;background-position: left;<?php else : ?>margin-right:2%;background-position: right;<?php endif; ?>">
@@ -49,15 +79,25 @@ $testimonials   = get_field('testimonials');
                         <h2><?php echo $title; ?></h2>
                     </div>
                     <div class="desc">
-                        <?php echo $desc; ?>
+                        <?php echo  $container_text; ?>
                     </div>
                     <?php if($link != '' && $label != '') : ?>
-                    <p class="tbtn">
-                        <a href="<?php echo $link; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase" title="<?php echo $title; ?>"<?php if($target){ echo ' target="_blank" rel="noopener"'; } ?>><?php echo $label; ?></a>
-                    </p>
+                    <div class="content-btns d-flex justify-content-between">
+                        <p class="tbtn">
+                            <a href="<?php echo $link; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase" title="<?php echo $title; ?>"<?php if($target){ echo ' target="_blank" rel="noopener"'; } ?>><?php echo $label; ?></a>
+                        </p>
+                        <?php endif; ?>
+                        <?php if($link_2 != '' && $label_2 != '') : ?>
+                            <p class="tbtn">
+                                <a href="<?php echo $link_2; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase btn-right"><?php echo $label_2; ?></a>
+                            </p>
+                        <?php endif; ?>
+                    <?php if($link != '' && $label != '') : ?>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
+            <img class="img-line <? if($has_subtitle) : ?>img-line-whith-subtitles<?php endif; ?>" src="<?= home_url()?>/wp-content/uploads/2021/08/trait-horizontal.png">
             <!-- End Right Text -->
             <?php else : ?>
             <!-- Start Left Text -->
@@ -67,15 +107,25 @@ $testimonials   = get_field('testimonials');
                         <h2><?php echo $title; ?></h2>
                     </div>
                     <div class="desc">
-                        <?php echo $desc; ?>
+                        <?php echo $container_text; ?>
                     </div>
                     <?php if($link != '' && $label != '') : ?>
-                    <p class="tbtn">
-                        <a href="<?php echo $link; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase" title="<?php echo $title; ?>"<?php if($target){ echo ' target="_blank" rel="noopener"'; } ?>><?php echo $label; ?></a>
-                    </p>
+                    <div class="content-btns d-flex justify-content-between">
+                        <p class="tbtn">
+                            <a href="<?php echo $link; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase" title="<?php echo $title; ?>"<?php if($target){ echo ' target="_blank" rel="noopener"'; } ?>><?php echo $label; ?></a>
+                        </p>
+                        <?php endif; ?>
+                        <?php if($link_2 != '' && $label_2 != '') : ?>
+                            <p class="tbtn">
+                                <a href="<?php echo $link_2; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase btn-right"><?php echo $label_2; ?></a>
+                            </p>
+                        <?php endif; ?>
+                    <?php if($link != '' && $label != '') : ?>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
+            <img class="img-line img-line-right <? if($has_subtitle) : ?>img-line-whith-subtitles<?php endif; ?>" src="<?= home_url()?>/wp-content/uploads/2021/08/trait-horizontal-2.png">
             <!-- End Left Text -->
 
             <!-- Start Left Image -->

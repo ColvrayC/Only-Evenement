@@ -24,6 +24,10 @@ $link               = esc_url(get_field('link'));
 
 $label              = esc_html(get_field('label'));
 
+$link_2     = esc_url(get_field('link_2'));
+
+$label_2    = esc_html(get_field('label_2'));
+
 $target             = get_field('target');
 
 $btn                = get_field('btn_style');
@@ -74,24 +78,34 @@ if($right){
     <div class="container">
         <div class="row">
             <div class="<?php echo $lft; ?>">
+                <?php if($pretitle != '') : ?>
+                <span class="pretitle wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s">
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/start-quote.png">    
+                    <?php echo $pretitle; ?>
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/end-quote.png"/>
+                </span>
+                <?php endif; ?>
                 <div class="data">
-                    <?php if($pretitle != '') : ?>
-                    <span class="pretitle wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s">
-                        <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/start-quote.png">    
-                        <?php echo $pretitle; ?>
-                        <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/end-quote.png"/>
-                    </span>
-                    <?php endif; ?>
+                    
                     <h2 class=" wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s"><?php echo $title; ?></h2>
                     <div class="desc wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s">
                         <?php echo $desc; ?>
                     </div>
                     <?php if($link != '' && $label != '') : ?>
-                    <p class="tbtn" title="<?php echo $title; ?>">
-                        <a href="<?php echo $link; ?>" class="uppercase btn btn-lg btn-secondary <?php if(!$btn){ echo 'btn-empty '; } ?>wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1.05s"<?php if($target){ echo ' target="_blank" rel="noopener"'; } ?>>
-                            <?php echo $label; ?> <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </p>
+                    <div class="content-btns d-flex justify-content-between">
+                        <p class="tbtn" title="<?php echo $title; ?>">
+                            <a href="<?php echo $link; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1.05s"<?php if($target){ echo ' target="_blank" rel="noopener"'; } ?>>
+                                <?php echo $label; ?> 
+                            </a>
+                        </p>
+                        <?php endif; ?>
+                        <?php if($link_2 != '' && $label_2 != '') : ?>
+                            <p class="tbtn">
+                                <a href="<?php echo $link_2; ?>" class="btn btn-lg btn-tertiary btn-empty uppercase btn-right"><?php echo $label_2; ?></a>
+                            </p>
+                        <?php endif; ?>
+                    <?php if($link != '' && $label != '') : ?>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -109,9 +123,12 @@ if($right){
                     <div class="small-img-bg-content small-img wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.25s">
                         <div class="small-img-bg imgcrop"></div>
                     </div>
-                  
+
+                   
                 </div>
+                <img class="img-spotted" src="<?= home_url(); ?>/wp-content/uploads/2021/08/tache-2.png"/>
             </div>
+            
         </div>
     </div>
 </section>
