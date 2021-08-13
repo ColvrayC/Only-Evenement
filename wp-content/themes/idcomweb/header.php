@@ -127,7 +127,54 @@ idcom_count_views();
 <body <?php body_class(); ?> data-barba="wrapper">
     <!-- Start top header -->
     <div class="container-fluid">
-       
+        <!-- Start top header -->
+        <div class="row top-header">
+            <div class="d-flex flex-row-reverse px-0">
+                <!-- CTA Phone -->
+                <div class="py-2 px-4 cta-phone">
+                    <a href="tel:<?php echo $site_data['mobile'] ?>"><i class="fas fa-phone-volume me-2"></i><?php echo $site_data['mobile']?></a>
+                </div>
+
+                <!-- Social share buttons -->
+                <div class="p-2">
+                    <?php if($site_data['facebook'] != '') : ?>
+
+                    <a href="<?php echo esc_url($site_data['facebook']); ?>" class="right-btn" title="<?php echo esc_html('Facebook'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+
+                    <?php endif; ?>
+
+                    <?php if($site_data['instagram'] != '') : ?>
+
+                    <a href="<?php echo esc_url($site_data['instagram']); ?>" class="right-btn" title="<?php echo esc_html('Instagram'); ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+
+                    <?php endif; ?>
+
+                    <?php if($site_data['twitter'] != '') : ?>
+
+                    <a href="<?php echo esc_url($site_data['twitter']); ?>" class="right-btn" title="<?php echo esc_html('Twitter'); ?>" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+
+                    <?php endif; ?>
+
+                    <?php if($site_data['pinterest'] != '') : ?>
+
+                    <a href="<?php echo esc_url($site_data['pinterest']); ?>" class="right-btn" title="<?php echo esc_html('Pinterest'); ?>" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
+
+                    <?php endif; ?>
+
+                    <?php if($site_data['tumblr'] != '') : ?>
+
+                    <a href="<?php echo esc_url($site_data['tumblr']); ?>" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank" rel="noopener"><i class="fab fa-tumblr"></i></a>
+
+                    <?php endif; ?>
+
+                    <?php if($site_data['rss']) : ?>
+
+                    <a href="/feed/" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank"><i class="fas fa-rss"></i></a>
+
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
     </div>   
     <!-- End top header -->
     <div class="main-container" data-barba="container" data-barba-namespace="<?php echo idcom_create_current_slug(); ?>">
@@ -135,65 +182,27 @@ idcom_count_views();
             
             <!-- Header container -->
             <div class="container-fluid">
-                 <!-- Start top header -->
-                <div class="row top-header">
-                    <div class="d-flex flex-row-reverse px-0">
-                        <!-- CTA Phone -->
-                        <div class="py-2 px-4 cta-phone">
-                            <a href="tel:<?php echo $site_data['mobile'] ?>"><i class="fas fa-phone-volume me-2"></i><?php echo $site_data['mobile']?></a>
-                        </div>
-
-                        <!-- Social share buttons -->
-                        <div class="p-2">
-                            <?php if($site_data['facebook'] != '') : ?>
-
-                            <a href="<?php echo esc_url($site_data['facebook']); ?>" class="right-btn" title="<?php echo esc_html('Facebook'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-
-                            <?php endif; ?>
-
-                            <?php if($site_data['instagram'] != '') : ?>
-
-                            <a href="<?php echo esc_url($site_data['instagram']); ?>" class="right-btn" title="<?php echo esc_html('Instagram'); ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-
-                            <?php endif; ?>
-
-                            <?php if($site_data['twitter'] != '') : ?>
-
-                            <a href="<?php echo esc_url($site_data['twitter']); ?>" class="right-btn" title="<?php echo esc_html('Twitter'); ?>" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-
-                            <?php endif; ?>
-
-                            <?php if($site_data['pinterest'] != '') : ?>
-
-                            <a href="<?php echo esc_url($site_data['pinterest']); ?>" class="right-btn" title="<?php echo esc_html('Pinterest'); ?>" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
-
-                            <?php endif; ?>
-
-                            <?php if($site_data['tumblr'] != '') : ?>
-
-                            <a href="<?php echo esc_url($site_data['tumblr']); ?>" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank" rel="noopener"><i class="fab fa-tumblr"></i></a>
-
-                            <?php endif; ?>
-
-                            <?php if($site_data['rss']) : ?>
-
-                            <a href="/feed/" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank"><i class="fas fa-rss"></i></a>
-
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Start main header -->
+                <div id="logo-wrapper-small-screen" class="row mx-auto">
+                    <a href="<?php echo home_url('/'); ?>" class=" wow fadeInDown main-logo mx-auto" data-wow-duration="0.05s" data-wow-delay="0.5s" title="<?php echo get_bloginfo(); ?>">
+                        <?php the_header_logo(); ?>
+                    </a>
+                </div>
                 <div class="row">
                     <!-- Main menu -->
-
-                    <div class="mx-auto ccol ccol-50 ccol-md-50 ccol-sm-50 ccol-xs-50 ccol-xx-50">
-
-                        <?php idcomtheme_header_menu(3); ?>
+                    <div class="col-12">
+                    
+                    <a id="logo-wrapper" href="<?php echo home_url('/'); ?>" class=" wow fadeInDown main-logo" data-wow-duration="0.05s" data-wow-delay="0.5s" title="<?php echo get_bloginfo(); ?>">
+                        <?php the_header_logo(); ?>
+                    </a>
+                     <?php idcomtheme_header_menu(3); ?>
 
                     </div>
+                   
 
                 </div>
+               
                 <!-- End main header -->
             </div>
 

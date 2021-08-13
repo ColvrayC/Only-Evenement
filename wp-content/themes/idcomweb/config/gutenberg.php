@@ -527,6 +527,34 @@ function idcom_register_acf_blocks(){
                 wp_enqueue_style('idcom-gtbg-offer', GUT.'offer/style/index.php', array(), IDCOMv, 'all');
             }
         ));
+        // Blog
+        acf_register_block_type(array(
+            'name'              => 'blog',
+            'title'             => __('Blog','idcomcrea'),
+            'render_template'   => $tpl.'blog/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-blog', GUT.'blog/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
+        // Article
+        acf_register_block_type(array(
+            'name'              => 'article',
+            'title'             => __('Article','idcomcrea'),
+            'render_template'   => $tpl.'article/tpl.php',
+            'category'          => 'idcom',
+            'icon'              => 'welcome-write-blog',
+            'keywords'          => array('texte','images'),
+            'post_types'        => array('post', 'page'),
+            'mode'              => 'edit',
+            'enqueue_assets'    => function(){
+                wp_enqueue_style('idcom-gtbg-article', GUT.'article/style/index.php', array(), IDCOMv, 'all');
+            }
+        ));
         
     }
     
@@ -544,6 +572,8 @@ function idcom_allowed_block_types($allowed_blocks){
         'acf/imgtext',
         'acf/imgtextbg',
         'acf/contact',
+        'acf/article',
+        'acf/blog',
         'acf/offer',
         'acf/testimonials',
         'acf/testimonial-form',

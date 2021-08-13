@@ -8,6 +8,7 @@ add_filter('show_admin_bar', '__return_false');
 
 include dirname(__FILE__).'/gutenberg.php';
 
+
 /**
  * Collecte des données globales du site
  */
@@ -138,6 +139,7 @@ if(function_exists('acf_add_options_page')){
         'capability'	=> 'edit_posts',
         'redirect'	=> false
     ));
+    
     
 }
 
@@ -320,13 +322,13 @@ function idcomtheme_header_menu($id){
             'menu'            => $id,
             'container'       => 'div',
             'container_id'    => 'header-menu-'.$id,
-            'container_class' => 'header-menu',
+            'container_class' => 'header-menu d-flex flex-row',
             'menu_id'         => false,
-            'menu_class'      => 'd-flex align-content-center flex-wrap align-items-center',
+            'menu_class'      => 'd-flex align-content-center flex-wrap align-items-center w-100',
             'depth'           => 3,
             'fallback_cb'     => '',
             'walker'          => '',
-            'items_wrap'      => '<a href="javascript:void(0);" id="hamburger"><i class="fas fa-bars"></i></a><ul id="%1$s" class="%2$s">%3$s<button type="button" id="close-menu"><i class="fa fa-times"></i></button></ul>',
+            'items_wrap'      => '<a href="javascript:void(0);" id="hamburger" class="d-flex d-lg-none align-items-center"><div class="d-flex d-lg-none align-items-center"><i class="fas fa-bars"></i><span class="title-hamburger">MENU</span></div></a><ul id="%1$s" class="%2$s">%3$s<button type="button" id="close-menu"><i class="fa fa-times"></i></button></ul>',
         ));
         
     }

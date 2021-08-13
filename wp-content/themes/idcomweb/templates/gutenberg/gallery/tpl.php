@@ -12,62 +12,73 @@ global $ID;
 
 global $site_data;
 
-$id            = get_field('id');
-
-$title         = get_field('title');
-
-$description   = esc_html(get_field('description'));
-
-$pictures      = '';
-
-if(have_rows('pictures')){
-
-    while(have_rows('pictures')){
-    
-        the_row();
-
-        $filter   = get_sub_field('filter');
-        $imgs    = get_sub_field('imgs');
-
-        $n = 0;
-
-        foreach ($imgs as $img){ 
-            
-            $item = '
-            <div id="pic-'.$id.'-'.$n.'" class="picture pswpi wow fadeIn" data-wow-duration="0.5s" data-id="'.$n.'" data-cropped="true" data-caption="'.esc_html($img['alt']).'" data-src="'.$img['url'].'" data-width="100" data-height="100">
-                <figure class="img" title="'.esc_html($img['alt']).'" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">
-                    <img src="'.$img['sizes']['medium_large'].'" itemprop="thumbnail" alt="'.esc_html($img['alt']).'" class="imgcrop"/>
-                    <div class="overlay"><i class="icon-eye"></i></div>
-                    <figcaption itemprop="caption description">'.esc_html($img['alt']).'</figcaption>
-                </figure>
-            </div>';
-
-            $pictures .= $item;
-            $n++;
-          } 
- 
-    }   
-}
 ?>
-<section id="<?php echo esc_html($id); ?>" class="section gallery mh120 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s" data-idcom-js="idcomPicturesGallery">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="heading mhb48">
-                    <h2 class="text-center"><?php echo $title; ?></h2>
-                    <?php if($description != '') : ?>
-                    <p class="pretitle uppercase text-center"><?php echo $description; ?></p>
-                    <?php endif; ?>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div id="gallery-<?php echo esc_html($id); ?>" class="img-gallery">
-                    <?php echo $pictures; ?>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<section id="realisations" class="marge-pour-accueillir-bandeau-lateral">
+	<div class="container-fluid">
+		<div class="introduction">
+			<h2 class="titre-type"><?php echo get_field("realisations")["introduction"]["titre"]; ?></h2>
+            <div class="preambule-type"><?php echo get_field("realisations")["introduction"]["preambule"]; ?></div>
+		</div>
+		<div class="categories">
+			<button data-filter='*' class="is-checked">Tout</button>
+		<?php
+		foreach(get_field("realisations")["categories"] as $categorie){
+			echo "<button data-filter='.".sanitize_title($categorie["nom"])."'>".$categorie["nom"]."</button>";
+		}	
+		?>
+		</div>
+		<div class="grid-gallery grid-isotope" >
+		<?php	
+		$page						= (get_query_var('paged'))?get_query_var('paged'):'1';
+		$row              			= 0;
+		$realisations_per_page  	= 999;
+		$realisations           	= array_reverse(get_field("realisations")["liste_des_realisations"]);
+		$total            			= count($realisations);
+		$pages            			= ceil($total/$realisations_per_page);
+		$min              			= (($page*$realisations_per_page)-$realisations_per_page)+1;
+		$max              			= ($min+$realisations_per_page)-1;
+
+		foreach($realisations as $realisation){
+			$row++;
+			if($row < $min) { continue; }
+			if($row > $max) { break; }
+			echo "
+			<div class='realisation ".sanitize_title($realisation["categorie_associee"]["value"])."'>
+				<a href='".$realisation["photo"]["sizes"]["large"]."' data-lightbox='".$realisation["categorie_associee"]["value"]."' data-title='".str_replace("'","&apos;",$realisation["intitule"])."'>
+					<div class='visuel'>
+                        <img class='photo' src='".$realisation["photo"]["sizes"]["large"]."' alt='". $realisation["photo"]["sizes"]["large"]['alt']."'/>
+                        <div class='overlay-gallery'>
+                            <div class='categorie'>".$realisation["intitule"]."</div>
+                            <div class='intitule'>".$realisation["categorie_associee"]["label"]."</div>
+						</div>
+					</div>
+				</a>
+			</div>";
+		}	
+		?>
+		</div>
+		<?php	
+		if($pages>1){
+			$links=paginate_links(array(
+				'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
+				'format' => 'page/%#%',
+				'current' => $page,
+				'total' => $pages,
+				'prev_text' => '&lt;',
+				'next_text' => "VOIR PLUS",
+				'type' => 'array'
+			));
+			if(strpos(end($links),"next")){
+				#echo "<div class='la-pagination text-center'><h4>".end($links)."</h4></div>";
+			}
+		}
+		?>
+
+		<div class="scroller-status">
+			<div class="loader-ellips infinite-scroll-request">
+				<img src="<?= home_url(); ?>/wp-content/uploads/2021/08/loading.svg" />
+			</div>
+		</div>
+	</div>
 </section>

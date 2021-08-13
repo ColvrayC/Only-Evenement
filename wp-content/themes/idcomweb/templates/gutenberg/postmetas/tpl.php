@@ -26,13 +26,11 @@ if($date){
     
 }
 
-if($category){
+
     
-    $cats       = wp_get_post_categories(get_the_ID());
+    $the_cat    = '<a href="/blog/" title="Blog"><i class="fas fa-th-list"></i> Blog</a>';
     
-    $the_cat    = '<a href="'.get_category_link($cats[0]).'" title="'.get_cat_name($cats[0]).' - '.get_bloginfo().'"><i class="fas fa-th-list"></i> '.get_cat_name($cats[0]).'</a>';
-    
-}
+
 
 if($views){
     

@@ -1,5 +1,5 @@
 body{
-    
+   
     /* Barba loader (canvas) */
     #bb-loader {
         .transition(.5s);
@@ -246,10 +246,12 @@ body{
                 .transition(.25s);
                 display: block;
                 position: relative;
-                width: 80px;
-                max-width: 100%;
+                max-width: 230px;
                 height: auto;
             }
+        }
+        #logo-wrapper-small-screen{
+            display: none;
         }
         
         /* Header menu */
@@ -264,8 +266,9 @@ body{
             > #hamburger {
                 .transition(.5s);
                 display: none;
+                padding: 0px 7px;
                 position: relative;
-                width: 40px;
+                width: auto;
                 height: 40px;
                 background: transparent;
                 text-align: center;
@@ -293,6 +296,10 @@ body{
                 top: 50%;
                 transform: translateY(-50%);
                 padding: 0;
+                width: 90%!important;
+                margin-left: 0rem!important;   
+                margin-right: auto!important;
+               
                 > #close-menu {
                     .transition(.25s);
                     display: none;
@@ -311,13 +318,14 @@ body{
                     color: @cd;
                 }
                 > li {
+                    
                     .transition(.5s);
                     display: block;
                     flex: auto;
                     position: relative;
                     text-align: center;
                     > a {
-                        .transition(.5s);
+                        .transition(.2s);
                         display: block;
                         position: relative;
                         width: calc(~'100% - 12px');
@@ -329,6 +337,13 @@ body{
                         border: solid 1px transparent;
                         border-radius: 24px;
                         text-decoration: none;
+                        letter-spacing: 2px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        width: auto;
+                        font-family: 'lato', sans-serif;
+                        }
+                         
                     }
                     > ul {
                         display: none;
@@ -353,7 +368,6 @@ body{
                                 padding: 8px 12px;
                                 color: @white;
                                 text-decoration: none;
-                            }
                             > a:hover {
                                 background: @cd;
                                 color: @bc;
@@ -387,13 +401,15 @@ body{
                 }
                 > li:hover {
                     > a {
-                        color: @black !important;
+                        font-weight: 900;
                     }
                 }
                 > li.current-menu-item {
                     > a {
                         .transition(.5s);
                         font-weight: bold;
+                        font-weight: 900;
+                        color: red;
                     }
                     > a:hover {
                         color: @white !important;
@@ -437,6 +453,12 @@ body{
                         }
                     }
                 }
+                img{
+                    width: auto;
+                }
+                #logo-wrapper{
+                    visibility: visible!important;
+                }
             }
         }
         /* END Header menu */
@@ -446,7 +468,7 @@ body{
     header.sticky {
         position: fixed;
         top: 0;
-        background: fade(@white,92%);
+        background: @white;//fade(@white,92%);
         -webkit-box-shadow: 1px 1px 6px 3px rgba(0,0,0,0.15);
         box-shadow: 1px 1px 6px 3px rgba(0,0,0,0.15);
         .topbar {
@@ -456,6 +478,14 @@ body{
         .mainbar {
             padding-top: 0 !important;
             padding-bottom: 0 !important;
+        }
+
+        #logo-wrapper{
+            visibility: visible!important;
+            img{
+                width: 100px!important;
+                height: auto;
+            }
         }
     }
     
@@ -933,95 +963,129 @@ body{
     }
     
     footer{
-        
-        .transition(.25s);
-        display: block;
-        position: relative;
-        background: @ef;
-        background: -moz-linear-gradient(top,  @ef 1%, @ef-dk 100%);
-        background: -webkit-linear-gradient(top,  @ef 1%, @ef-dk 100%);
-        background: linear-gradient(to bottom,  @ef 1%, @ef-dk 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@ef, endColorstr=@ef-dk,GradientType=0 );
-        padding: 24px 0;
+        .content-logos{
+            margin-top: 6rem;
+            margin-bottom: 3rem;
+            background: transparent!important;
+
+            img{
+                width: auto;
+                height: auto;
+                max-height: 90px;
+                margin: 10px 2%;
+            }
+            
+           
+        }
+       
+        .content-footer{
+            background : @dark;
+            .content-menus{
+                color:@white;
+                a,span{
+                    color:@white;
+                    font-size: 13px;
+                    text-decoration: none;
+                }
+                .title-color-second{
+                    color:@bc;
+                }
+                h6{
+                    font-size: 13px;
+                    line-height: normal;
+                    text-transform: initial;
+                    color:@bc;
+                    padding: .5rem 0rem;    
+                }
+                .social-icons{
+                    a{
+                        i{
+                            font-size: 18px;
+                            margin-right: 20px;
+                            margin-top: 1rem;
+                        }
+                    }
                 
-        .footer-logo {
-            .transition(.5s);
-            > img {
-                .transition(.5s);
-                max-width: 80px;
+                }
             }
-            > span {
-                .transition(.5s);
-                display: inline-block;
-                position: relative;
-                width: 100%;
-                margin-top: 6px;
-                font-size: 13px;
-                text-transform: uppercase;
-                color: @fg;
-            }
-        }
-        .footer-logo:hover {
-            > img {
-                .rotation3DX(360deg);
-            }
-            > span {
-                color: @ab;
-                .rotation3DX(-360deg);
+            .content-credits{
+                 /* Credits bar */
+                .credits {
+                    .transition(.25s);
+                    display: flex;
+                    position: relative;
+                    margin-right: 1rem;
+                    margin-left: 0.5rem;
+                    margin-bottom: 0px!important;
+                    padding: 0;
+                    a.idcom-logo {
+                        .transition(.5s);
+                        display: inline-block;
+                        position: relative;
+                        flex: auto;
+                        > img {
+                            .transition(.5s);
+                            width: 48px;
+                            height: auto;
+                        }
+                    }
+                    a.idcom-logo:hover {
+                        > img {
+                            .rotation3D(360deg);
+                        }
+                    }   
+                       
+                }
+                /* END Credits bar */
+                .credits-text {
+                    color:@white;
+                    font-size: 12px;
+                    margin-right: 0.5rem;
+                    
+
+                    .transition(.25s);
+                    display: flex;
+                    position: relative;
+                    margin: 0;
+                    padding: 0;
+                    p {
+                        .transition(.25s);
+                        display: inline-block;
+                        position: relative;
+                        flex: auto;
+                        margin: 0;
+                        padding: 0 8px;
+                        
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        text-align: right;
+                        .separator {
+                            .transition(.25s);
+                            color: @ab;
+                        }
+                        a,
+                        .separator {
+                            .transition(.25s);
+                            margin: 0 4px;
+                            text-decoration: none;
+                        }
+                        a:hover {
+                            color: @bc;
+                            text-decoration: none;
+                        }
+                    }
+                    a{
+                        color:@white;
+                        text-decoration: none;
+                    }
+                    .separator{
+                        margin: 0px 5px;
+                    }
+                }
             }
         }
         
-        /* Credits bar */
-        .credits {
-            .transition(.25s);
-            display: flex;
-            position: relative;
-            margin: 0;
-            padding: 0;
-            p {
-                .transition(.25s);
-                display: inline-block;
-                position: relative;
-                flex: auto;
-                margin: 0;
-                padding: 0 8px;
-                font-size: 13px;
-                text-transform: uppercase;
-                text-align: right;
-                .separator {
-                    .transition(.25s);
-                    color: @ab;
-                }
-                a,
-                .separator {
-                    .transition(.25s);
-                    margin: 0 4px;
-                    text-decoration: none;
-                }
-                a:hover {
-                    color: @bc;
-                    text-decoration: none;
-                }
-            }
-            a.idcom-logo {
-                .transition(.5s);
-                display: inline-block;
-                position: relative;
-                flex: auto;
-                > img {
-                    .transition(.5s);
-                    width: 48px;
-                    height: auto;
-                }
-            }
-            a.idcom-logo:hover {
-                > img {
-                    .rotation3D(360deg);
-                }
-            }
-        }
-        /* END Credits bar */
-        
+       
     }
     form{
 
@@ -1074,7 +1138,7 @@ body{
     body{
         
         header{
-
+           
         }
         
         main{
@@ -1106,4 +1170,80 @@ body{
     }
     
 }
+@media (max-width:1400px){
+    body{
+        header{
+            .header-menu{
+                >ul{
+                    width: 90%!important;
+                    >li{
+                        >a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1250px){
+    body{
+        .top-header {
+            >div{
+                position: absolute;
+            }
+        }
+        header{
+            .header-menu{
+                >ul{
+                    width: 100%!important;
+                    margin-left: auto!important;
+                }
+            }
+            #logo-wrapper-small-screen{
+                display: block!important;
+                visibility: visible!important;
+                a{
+                    display: block!important;
+                    visibility: visible!important;
+                }
+            }
+            .main-logo{
+                >img{
+                    max-width: 145px!important;
+                    margin-left: auto!important;
+                    margin-right: auto!important;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    
+    .header-menu {
+        #logo-wrapper{
+           display: none;
+        }
+        
+    }
 
+}
+
+@media (max-width:992px){
+    body{
+        .section.imgtextbg{
+            .tbtn{
+                z-index: 0;
+            }
+            
+        }
+    }
+}
+@media (max-width: 557px){
+    footer{
+        .content-logos{
+            .logo-coaching-mariage{
+                margin-right: 0rem!important;
+            }
+        }
+    }
+}

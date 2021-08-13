@@ -33,27 +33,36 @@ $is_right   = get_field('is_right');
 
 $text_in_img  = get_field('text_in_img');
 
+$vertical_align_img =  get_field('vertical_align_img');
+
+$img_before    = get_field('img_before');
+
+$badge         = get_field('badge');
+
 
 
 ?>
-<section id="<?php echo esc_html($id); ?>" class="section imgtext mht96 mhb64 pb-0 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s">
+<section id="<?php echo esc_html($id); ?>" class="section imgtext mht96 mhb64 pb-0 wow fadeIn <?php if($img_before) : ?> pt-0 <?php endif; ?>" data-wow-duration="0.5s" data-wow-delay="1.25s">
     <div class="container-fluid">
         <div class="row">
             <?php if($is_right) : ?>
              <!-- Start left Image -->
-            <div class="col-12 col-lg-6 my-5 my-lg-0 text-center order-2 order-lg-1">
+            <div class="col-12 col-lg-6 my-lg-5 mt-5 text-center <?php if($img_before) : ?>  mb-5 <?php else : ?>  order-lg-1 order-2 <?php endif; ?> <?php if($vertical_align_img) : ?> d-lg-flex align-items-lg-center<?php endif; ?>">
                 <div class="img">
                     <?php if($text_in_img) : ?>
-                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>" class="img-with-text imgcrop" />
+                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>" class="img-with-text " />
                     <?php else : ?>
                         <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>"  />
+                        <?php if($badge) : ?>
+                        <img class="badges mt-0" src="<?= home_url()?>/wp-content/uploads/2021/08/badge-coaching.png"/>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
             </div>
             <!-- End left Text -->
 
             <!-- Start Right Text -->
-            <div class="col-12 col-lg-6 order-1 order-lg-2">
+            <div class="col-12 col-lg-6 <?php if($img_before) : ?> <?php else : ?>order-lg-2 order-1  <?php endif; ?>">
                 <div class="content mx-auto">
                     <div class="heading">
                         <h4><?php echo $title; ?></h4>
@@ -88,7 +97,7 @@ $text_in_img  = get_field('text_in_img');
             <?php else : ?>
 
             <!-- Start Left Text -->
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 <?php if($img_before) : ?> order-lg-1 order-2 <?php endif; ?>">
                 <div class="content mx-auto">
                     <div class="heading">
                         <h3><?php echo $title; ?></h3>
@@ -117,12 +126,15 @@ $text_in_img  = get_field('text_in_img');
             <!-- End Left Text -->
 
             <!-- Start right Image -->
-            <div class="col-12 col-lg-6 mt-5 mt-lg-0 text-center">
+            <div class=" col-12 col-lg-6 mt-5 mt-lg-0 text-center <?php if($img_before) : ?> order-lg-2 order-1 mb-5 <?php else: ?> order-lg-1 order-2 <?php endif; ?> <?php if($vertical_align_img) : ?> d-lg-flex align-items-lg-center<?php endif; ?>">
                 <div class="img">
                     <?php if($text_in_img) : ?>
-                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>" class="img-with-text imgcrop" />
+                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>" class="img-with-text " />
                     <?php else : ?>
                         <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_html($img['alt']); ?>"  />
+                        <?php if($badge) : ?>
+                        <img class="badges mt-0" src="<?= home_url()?>/wp-content/uploads/2021/08/badge-coaching.png"/>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
             </div>

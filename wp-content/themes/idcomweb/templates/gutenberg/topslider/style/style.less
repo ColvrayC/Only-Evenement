@@ -100,6 +100,7 @@ body{
                                         position: relative;
                                         margin-bottom: 0;
                                         margin-top: 12px;
+                                        z-index: 1;
                                         > a {
                                             .transition(.5s);
                                             display: inline-block;
@@ -143,6 +144,7 @@ body{
                 width: 64px;
                 font-size: 4px;
                 left: auto;
+                z-index:3;
                 &::after{
                     font-size: 8px;
                 }
@@ -325,6 +327,9 @@ body{
     body{
         
         main {
+            .section.topslider {
+                margin-top: 0px!important;
+            }
             .swiper-container {
                 max-height: 700px;
             }

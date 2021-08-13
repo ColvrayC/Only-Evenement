@@ -1,0 +1,358 @@
+@import '/../../../../css/utils';
+@import '/../../../../css/globals';
+
+body{
+    
+    main {
+        
+        .section.news {
+            position: relative;
+            .content-title{
+                h2{
+                    text-align: center;
+                    margin: 4% 0px 1% 0px;
+                }
+            }
+            .article{
+                padding: 3rem 2rem;
+                text-align: center;
+                a{
+                    text-decoration: none;
+                    .heading{
+                        margin-top: 40px;
+                        hr{
+                            width: 50px;
+                            height: 2px;
+                            color:@bc;
+                            margin-right: 40px;
+                            opacity: 1;
+                        }
+                        h6{
+                            color:@de;
+                            font-size: 15px;
+                            text-transform: none;
+                            font-weight: 400;
+                        }
+                        h3{
+                            font-size: 27px;
+                            color:@black;
+                        }
+                        
+                    }
+                    img{
+                        width: 100%;
+                        height: 420px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                    &:hover{
+                        color:@bc;
+                    }
+                }
+            }
+
+            #pagination{
+                .page-numbers{
+                    background: transparent!important;
+                    color: @black!important;
+                    display: inline!important;
+                    margin: 0px 10px;
+                    &:hover{
+                        color:@bc!important;
+                    }
+                }
+                .current{
+                    font-weight: bold;
+                    color:@black!important;
+                }
+                .prev {
+                    span{
+                        margin-left: 1rem!important;
+                    }
+                    i{
+                        color:@bc;
+                    }
+                }
+                .next {
+                    span{
+                        margin-right: 1rem!important;
+                    }
+                    i{
+                        color:@bc;
+                    }
+                }
+            }
+            .img-spotted{
+                position: absolute;
+                top: 13rem;
+                left: 0;
+                z-index: -1;
+                width: auto;
+            }
+            .img-spotted-bottom{
+                position: absolute;
+                bottom: 45rem;
+                right: 0;
+                z-index: -1;
+                width: auto;
+            }
+            .img-line{
+                position: absolute;
+                top: 13rem;
+                right: 0;
+                z-index: -1;
+                width: auto;
+            }
+            .img-line-bottom{
+                position: absolute;
+                bottom: 23rem;
+                left: 0;
+                z-index: -1;
+                width: auto;
+            }
+            .not-all{
+                .thumb{
+                    position: relative;
+                }
+                .content-img{
+                    position: relative;
+                }
+                .article{
+                    a{
+                        .heading{
+                            margin-top: 20px;
+                            text-align: left;
+                            h3{
+                                font-family: 'Montserrat',sans-serif!important;
+                            }
+                        }
+                    }
+                    .tbtn{
+                        text-align: left;
+                        margin-top: 3rem;
+                        z-index: 1;
+                        a{
+                            &:hover{
+                                color:@white;
+                            }
+                        }
+                    }
+                }
+                .date-post{
+                    position: absolute;
+                    background: @bc;
+                    top: 20px;
+                    left: 20px;
+                    border: 1px solid transparent;
+                    border-radius: 50%;
+                    width: 90px;
+                    height: 90px;
+
+                    .date-number{
+                        color: @white;
+                        line-height: normal;
+                        font-family: 'Amiri',sans-serif;
+                        font-size: 40px!important;
+                    }
+                    .date-month{
+                        position: absolute;
+                        text-transform: uppercase;
+                        color: #ffffff;
+                        letter-spacing: 2px;
+                        position: absolute;
+                        top: 70%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                .img-spotted-left{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width:auto;
+                }
+                .img-spotted-right{
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width:auto;
+                }
+            }
+           
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+    
+    body{
+        
+        main{
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 1200px) and (max-width: 1360px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+    body {
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    body{
+        
+        main {
+            
+            .section.news {
+               
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+@media (max-width:991px){
+    body{
+        main{
+            .section.news{
+                .not-all{
+                    .img-spotted-left, .img-spotted-right{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767.98px) {
+    
+    body{
+        
+        main {
+
+            .section.news {
+                .not-all{
+                    margin-right: auto!important;
+                    margin-left: auto!important;
+                    padding:0px!important;
+
+                    .article{
+                        padding: 1rem !important;
+                        .heading{
+                            text-align: center!important;
+                        }
+                        .tbtn{
+                            text-align: center;
+                            margin-top: 2rem;
+                            margin-bottom: 2rem;
+                            
+                        }
+                       
+                    }
+    
+                    .date-number{
+                       padding-top: 9px;
+                    }
+
+                    
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    body{
+        
+        main {
+
+            .section.news {
+                
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    body{
+        
+        main {
+
+            .section.news {
+                
+            }
+            
+        }
+        
+    }
+    
+}
+
+@media (max-width: 380px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}
+
+@media (max-width: 320px) {
+    
+    body{
+        
+        main {
+
+        }
+        
+    }
+    
+}

@@ -44,6 +44,10 @@ $istext             = get_field('istext');
 
 $right              = get_field('right');
 
+$vertical_align_img =  get_field('vertical_align_img');
+
+$img_before              = get_field('img_before');
+
 $icons = array(
     'calendrier'    => 'fas fa-calendar-alt',
     'utilisateur'   => 'fas fa-user',
@@ -59,17 +63,17 @@ if($right){
     
     $imgwow = 'Left';
     
-    $lft    = 'col-12 col-md-6 order-md-2 col-lg-6 order-lg-2';
+    $lft    = 'col-12 col-lg-6  order-lg-2';
     
-    $rgt    = 'col-12 col-md-6 order-md-1 col-lg-6 order-lg-1';
+    $rgt    = 'col-12 col-lg-6   order-lg-1';
     
 }else{
     
     $imgwow = 'Right';
     
-    $lft    = 'col-12 col-md-6 order-md-1 col-xxl-5 order-lg-1';
+    $lft    = 'col-12 col-lg-6 col-xxl-5 ';
     
-    $rgt    = 'col-12 col-md-6 order-md-2 col-xxl-7 order-lg-2';
+    $rgt    = 'col-12 col-lg-6  col-xxl-7 ';
     
 }
 
@@ -77,7 +81,7 @@ if($right){
 <section id="<?php echo esc_html($id); ?>" class="section dyptich-text ph56 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.75s">
     <div class="container">
         <div class="row">
-            <div class="<?php echo $lft; ?>">
+            <div class="<?php echo $lft; ?> <?php if($img_before) : ?> order-lg-1 order-2 <?php endif; ?>">
                 <?php if($pretitle != '') : ?>
                 <span class="pretitle wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s">
                     <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/start-quote.png">    
@@ -109,8 +113,9 @@ if($right){
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="<?php echo $rgt; ?>">
-                <div class="pictures">
+            <div class="<?php echo $rgt; ?> <?php if($img_before) : ?> order-lg-2 order-1 mb-5 <?php endif; ?>">
+                        
+                <div class="pictures <?php if($vertical_align_img) : ?> d-lg-flex align-items-lg-center d-xl-block<?php else : ?><?php endif; ?>">
                     <div class="big-img wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.05s">
                         <img src="<?php echo esc_url($big['url']); ?>" alt="<?php echo esc_html($big['alt']); ?>" class="imgcrop"/>
                     </div>

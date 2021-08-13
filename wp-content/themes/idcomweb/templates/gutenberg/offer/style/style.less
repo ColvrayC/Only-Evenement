@@ -5,17 +5,107 @@ body{
     
     main {
         
-        .section.imgtext {
+        .section.offer {
             h4{
                 margin-bottom: 55px;
             }
             h3{
                 color: @black;
             }
-            position: relative;
-            padding-bottom: 7rem;
-            background-repeat: no-repeat; 
-            background-size: auto 100%;
+            .main-title{
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            .section-offer{
+                padding: 3rem!important;
+               
+                .content-offer{
+                    border:1px solid #c686631f;
+                    text-align: center;
+                    .header{
+                        background: @bc;
+                        h5{
+                            padding: 14px 0px;
+                        }
+                    }
+                    .content-offer-desc{
+                        h6{
+                            margin-top: 2rem;
+                            margin-bottom: 1rem;
+                        }
+                        p{
+                            max-width: 250px;
+                            font-family: 'lato', sans-serif;
+                            font-weight: 500;
+                            color:#b2b2b2;
+                            margin-left: auto!important;
+                            margin-right: auto!important;
+                            margin-bottom: 0px;
+                        }
+                    }
+                    .price{
+                        color: @bc;
+                        font-size: 53px;
+                        font-weight: 600;
+                        font-family: 'lato', sans-serif;
+                        letter-spacing: 3px;
+                    }
+                    .subtitle-price{
+                        margin-top: -13px;
+                        color:#b2b2b2;
+                    }
+                    .btn-first{
+                        padding: 12px 50px;
+                        background: transparent;
+                        border-radius: 25px!important;
+                        border: 1px solid @black;
+                        color:@black;
+                        margin-bottom: 3rem;
+                        margin-top: 2rem;
+                        &:hover{
+                            background-color: @ef-dk;
+                            color:@white;
+                            border:1px solid transparent;
+                        }
+                    }
+                }
+                &:first-child {
+                    .content-offer{
+                        border:1px solid #dbb19b26;
+                        .header{
+                            background: @fg;
+                        }
+                        .price{
+                            color:@fg;
+                        }
+                        .btn-first{
+                            border: 0px solid @black;
+                            color:@white;
+                            background-color: @fg;
+                            &:hover{
+                                background-color: @fg-dk;
+                                color:@white;
+                                
+                            }
+                        }
+                    }
+                }
+               
+            }
+        
+            .heading{
+                h2{
+                    margin-bottom: 0px;
+                    padding-top: 3rem!important;
+                }
+            }
+            .desc{
+                max-width: none!important;
+                h4{
+                    margin-bottom: 15px;
+                }
+            }
+
             .img-with-text{
                 object-fit: contain;
                 padding-left:0px;
@@ -58,6 +148,7 @@ body{
                     position: relative;
                     margin-top: 24px;
                     margin-bottom: 0;
+                    z-index: 1;
                     .btn-right{
                         background: transparent;
                         border: 1px solid @bc;
@@ -146,7 +237,21 @@ body{
     }
 }
 @media (max-width: 1400px) {
-    
+    body{
+        main{
+            .section.offer{
+                .section-offer{
+                    padding: 1rem!important;
+                }
+                .heading{
+                    h2{
+                        padding-top: 1rem!important;
+                    }
+                }
+            }
+           
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -154,15 +259,18 @@ body{
     body{
         
         main {
-            .section.imgtext{
+            .section.offer{
                 padding-bottom: 0rem;
                 .content{
-                    h3,h4{
+                    margin-left: auto !important; 
+                    margin-right: auto !important; 
+                    h2,h3,h4{
                         text-align: center;
                     }
                    
                     .desc{
                         margin-left: auto !important; 
+                        margin-right: auto !important; 
                     }   
                 }
                 p{
@@ -188,11 +296,12 @@ body{
     body{
         
         main {
-            .section.imgtext{
+            .section.offer{
                 .tbtn{
                     text-align: center;
+                    padding: 0px 12px;
                     a{
-                    width: 50%;   
+                    width: 100%;   
                     }
                 }
                
@@ -210,7 +319,7 @@ body{
     body{
         
         main {
-            .section.imgtext{
+            .section.offer{
                 .tbtn{
                     a{
                     width: 100%;   

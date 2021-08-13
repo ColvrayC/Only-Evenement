@@ -39,10 +39,32 @@
                 }
             }
         }
-        
-        header{
-
+        .top-header{
+            display: none!important ;
         }
+        header{
+            .header-menu{
+                margin: 3px 0px;
+                >ul{
+                    button{
+                        i{
+                            color: black;
+                        }
+                        
+                    }
+                }
+
+            }
+            #logo-wrapper-small-screen{
+                position: absolute!important ;
+                top: 50%!important ;
+                left: auto!important ;
+                right: 0!important ;
+                transform: translate(0,-50%)!important ;
+            }
+            
+        }
+
         
         main{
             
@@ -104,42 +126,73 @@
         }
         
         footer{
-            
-            .footer-logo {
-                display: block;
-                position: relative;
-                width: 260px;
-                margin: 0 auto 24px auto;
-                text-align: center;
-            }
+            .content-footer{
 
-            .credits {
-                display: block;
-                position: relative;
-                p {
-                    display: block;
-                    position: relative;
-                    text-align: center;
-                    flex: none;
-                    .separator {
-                        display: none;
+                h5{
+                    font-size: 15px!important;
+                }
+               
+                .content-menus{
+                    .social-icons{
+                        a{
+                            i{
+                                margin: 20px 10px;
+                            }
+                        }
                     }
-                    a,
-                    span {
+                }
+                .content-credits{
+                    display:  block!important;
+                    text-align: center;
+                    .credits {
                         display: block;
                         position: relative;
-                        width: 100%;
-                        padding: 8px 0;
+                        margin-right: 0rem;
+                        margin-left: 0rem;
+                        p {
+                            display: block;
+                            position: relative;
+                            text-align: center;
+                            flex: none;
+                            .separator {
+                                display: none;
+                            }
+                            a,
+                            span {
+                                display: block;
+                                position: relative;
+                                width: 100%;
+                                padding: 8px 0;
+                            }
+                        }
+                        a.idcom-logo {
+                            display: block;
+                            position: relative;
+                            width: 48px;
+                            margin: 24px auto 0 auto;
+                            flex: none;
+                        }
                     }
-                }
-                a.idcom-logo {
-                    display: block;
-                    position: relative;
-                    width: 48px;
-                    margin: 24px auto 0 auto;
-                    flex: none;
+                    .credits-text{
+                        display: block!important;
+                        .link-website-creator{
+                            display: block!important;
+                        }
+                        .separator.first{
+                            display: none;
+                        }
+                    }
+                    .credits{
+                        margin-bottom: 0.5rem !important;
+                    }
+                }                
+            }
+            .content-logos{
+                .logo-letters{
+                    margin: 10px 35%;
                 }
             }
+          
             
         }
         
@@ -190,7 +243,7 @@
         }
         
         footer{
-
+           
         }
         
     }
@@ -218,7 +271,7 @@
         }
         
         footer{
-
+            
         }
         
     }

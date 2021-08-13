@@ -32,7 +32,7 @@
 @light-lt:      lighten(@light, @lighten);
 @light-dk:      darken(@light, @darken);
 
-@dark:          #202020;
+@dark:          #272624;
 @dark-lt:       lighten(@dark, @lighten);
 @dark-dk:       darken(@dark, @darken);
 
@@ -81,11 +81,11 @@
 @ef-dk-a:   fade(@ef-dk, @alpha);
 
 /* Sixenary color ( rose ) */
-@fg:        #ff82e9;
+@fg:        #dbb19b;
 @fg-a:      fade(@fg, @alpha);
-@fg-lt:     #fc9eeb;
+@fg-lt:     #dbb19b;
 @fg-lt-a:   fade(@fg-lt, @alpha);
-@fg-dk:     #fe61e2;
+@fg-dk:     #d89d7d;
 @fg-dk-a:   fade(@fg-dk, @alpha);
 
 /* Septanary color ( vert fluo ) */
@@ -289,8 +289,8 @@
 @titlefonth2: 43px;
 @titlefonth3: 33px;
 @titlefonth4: 17px;
-@titlefonth5: 27px;
-@titlefonth6: 21px;
+@titlefonth5: 15px;
+@titlefonth6: 14px;
 @titlefont100: 100;
 @titlefont300: 300;
 @titlefont400: 400;
@@ -316,7 +316,11 @@
 /* END Site fonts */
 
 /* END global vars */
+html,body{
+    overflow : hidden ; 
+    overflow-y :auto ; 
 
+}
 html { overflow-x: hidden; }
 
 body {
@@ -376,7 +380,7 @@ body {
     .mhb96 { margin-bottom: 96px; }
     .mhb108 { margin-bottom: 108px; }
     .mhb120 { margin-bottom: 120px; }
-        
+    .mt-7{margin-top:7rem!important;}
     font-family: @textfont;
     font-size: @textfontsize;
     font-weight: @textfont400;
@@ -387,7 +391,11 @@ body {
         font-family: @titlefont;
         font-family: 'Amiri', sans-serif;
         color: @ab;
+        
+       
+    
     } 
+    
     
     h4, h5, h6 {
         font-family: 'montserrat', sans-serif;
@@ -399,10 +407,12 @@ body {
     }
     h2{
         font-size: @titlefonth2;
+        margin-bottom: 3rem!important;
+        line-height: 45px!important;
     }
     h3{
         font-size: @titlefonth3;
-        
+        line-height: 23px!important;
     }
     h4{
         font-size: @titlefonth4;
@@ -410,10 +420,16 @@ body {
         text-transform: uppercase;
     }
     h5{
+        color: @white;
+        text-transform: uppercase;
         font-size: @titlefonth5;
+        letter-spacing: 1px;
+        font-weight: 600;    
     }
     h6{
+        color:@black;
         font-size: @titlefonth5;
+        font-weight: bold;
     }
 
     h1, .fakeh1 { font-size: @titlefonth1; line-height: normal; }

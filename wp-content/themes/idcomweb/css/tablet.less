@@ -38,16 +38,10 @@
 @media (max-width: 991.98px) {
     
     body{
-        
+
+      
+
         header{
-                        
-            .topbar {
-                .container {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-            }
-            
             /* Full logo */
             #full-md-logo {
                 .transition(.25s);
@@ -68,6 +62,9 @@
             
             /* Header main menu */
             .header-menu {
+                .title-hamburger{
+                    margin-left: 0.5rem;
+                }
                 > #hamburger {
                     display: block;
                     float: right;
@@ -85,6 +82,9 @@
                     background: fade(@bc, 95%);
                     > #close-menu {
                         display: block;
+                        i{
+                            color:@black;
+                        }
                     }
                     > li {
                         display: block;
@@ -156,7 +156,7 @@
                     }
                     > li.current-menu-item {
                         > a {
-                            background: @de;
+                            background: black;
 /*                            border: solid 1px @ab;*/
                             color: @ab;
                             text-shadow: 0 0 0 rgba(0,0,0,0);
@@ -181,7 +181,20 @@
                 }
             }
             /* END Header main menu */
-            
+            #logo-wrapper-small-screen{
+                //display: none!important;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                >a{
+                    >img{
+                        margin-top: 0px;
+                        max-width: 82px!important;
+                    }
+                }
+               
+            }
         }
         
         main {
@@ -207,10 +220,19 @@
         }
         
         footer {
-            
+          
+            .content-menus{
+                text-align: center!important;
+                .social-icons{
+                    justify-content: center!important;
+                }
+            }
             .tibtn {
                 text-align: center;
                 padding: 0 0 24px 0;
+            }
+            .content-credits{
+                justify-content: center;
             }
             
         }

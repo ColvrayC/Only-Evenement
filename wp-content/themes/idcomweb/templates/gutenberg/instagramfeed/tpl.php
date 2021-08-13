@@ -20,7 +20,7 @@ $desc           = wp_kses_post(get_field('desc'));
 
 ?>
 <section id="<?php echo esc_html($id); ?>" class="section instagramfeed ph72 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.05s">
-    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/ornament-bis.svg" alt="<?php _e('Vanessa CARRARA-DOUILLET sur Instagram','idcomcrea'); ?>" class="ornament"/>
+    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/ornament-bis.svg" alt="<?php _e('Instagram','idcomcrea'); ?>" class="ornament"/>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-2 col-lg-2"></div>

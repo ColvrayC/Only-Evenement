@@ -13,38 +13,126 @@ global $ID;
 ?>
         </main>
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-xs-6 col-sm-12 col-md-12 col-lg-3">
-                        <a href="<?php echo home_url('/'); ?>" class="footer-logo wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.75s" title="<?php echo get_bloginfo(); ?>">
-                            <?php the_footer_logo(); ?>
-                        </a>
-                    </div>
-                    <div class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                        2
-                    </div>
-                    <div class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                        3
-                    </div>
-                    <div class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                        4
-                    </div>
+            <div class="content-logos container">
+                <div class="d-flex justify-content-center align-items-center flex-wrap">
+                    <img class="" src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-onlyday.png"/>
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-coaching-mariage-2.jpg"/>
+                    <img class="logo-letters" src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-mariage-net.png"/>
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-coaching-expert.png"/>
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-zank-you.png"/>
+                    
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p class="credits text-center">
+            </div>
+            <div class="content-footer">
+                <div class="container">
+                    <div class="row content-menus mx-auto me-lg-auto">
+                        <div class="col-12 col-md-6 col-lg-3 px-0 px-md-2 pt-5">
+                            <div class="footer-menu wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.05s">
+                                <div class="fm-title">
+                                    <h5>Plan du site</h5>
+                                </div>
+                                <div class="fm-menu">
+                                    <?php idcomtheme_footer_menu(29); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 px-0 px-md-2 pt-5">
+                            <div class="footer-menu wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.05s">
+                                <div class="fm-title">
+                                    <h5 class="title-color-second">Organisation mariage</h5>
+                                </div>
+                                <div class="fm-menu">
+                                    <?php idcomtheme_footer_menu(30); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 px-0 px-md-2 pt-5">
+                            <div class="footer-menu wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.05s">
+                                <div class="fm-title">
+                                    <h5 class="title-color-second">Officiante de cérémonie</h5>
+                                </div>
+                                <div class="fm-menu">
+                                    <?php idcomtheme_footer_menu(31); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 px-0 px-md-2 pt-5">
+                            <div class="footer-menu wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.05s">
+                                <div class="fm-title">
+                                    <h5>Contact</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 content-contact">
+                                        <h6>Email</h6>
+                                        <a href="mailto:<?php echo $site_data['email'] ?>"><?php echo $site_data['email']?></a>
+                                    </div>
+                    
+                                    <div class="col-12 col-lg-6 content-contact">
+                                        <h6>Téléphone</h6>
+                                        <a href="tel:<?php echo $site_data['mobile'] ?>"><?php echo $site_data['mobile']?></a>
+                                    </div>
+                                    <div class="col-12 col-lg-6 content-contact">
+                                        <h6>Adresse</h6>
+                                        <span><?= $site_data['codepostal'] ?> <?= $site_data['ville'] ?></span>
+                                    </div>
+                                    <div class="col-12 content-contact">
+                                        <div class="social-icons d-flex">
+                                            <?php if($site_data['facebook'] != '') : ?>
+
+                                            <a href="<?php echo esc_url($site_data['facebook']); ?>" class="right-btn" title="<?php echo esc_html('Facebook'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+
+                                            <?php endif; ?>
+
+                                            <?php if($site_data['instagram'] != '') : ?>
+
+                                            <a href="<?php echo esc_url($site_data['instagram']); ?>" class="right-btn" title="<?php echo esc_html('Instagram'); ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+
+                                            <?php endif; ?>
+
+                                            <?php if($site_data['twitter'] != '') : ?>
+
+                                            <a href="<?php echo esc_url($site_data['twitter']); ?>" class="right-btn" title="<?php echo esc_html('Twitter'); ?>" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+
+                                            <?php endif; ?>
+
+                                            <?php if($site_data['pinterest'] != '') : ?>
+
+                                            <a href="<?php echo esc_url($site_data['pinterest']); ?>" class="right-btn" title="<?php echo esc_html('Pinterest'); ?>" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
+
+                                            <?php endif; ?>
+
+                                            <?php if($site_data['tumblr'] != '') : ?>
+
+                                            <a href="<?php echo esc_url($site_data['tumblr']); ?>" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank" rel="noopener"><i class="fab fa-tumblr"></i></a>
+
+                                            <?php endif; ?>
+
+                                            <?php if($site_data['rss']) : ?>
+
+                                            <a href="/feed/" class="right-btn" title="<?php echo esc_html('Tumblr'); ?>" target="_blank"><i class="fas fa-rss"></i></a>
+
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-credits d-flex align-items-center mt-5 pb-2 pb-lg-5">
+                        <p class=" credits text-center">
                             <a href="<?php echo esc_url('https://www.groupe-idcom.fr'); ?>" class="idcom-logo" target="_blank" rel="noopener">
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/idcomweb-footer-logo.svg" alt="Groupe IDCOM : création de sites Internet vitrine et e-commerce" class=""/>
                             </a>
-                            <span class="separator"></span>
-                            <a href="<?php echo esc_url('https://www.groupe-idcom.fr'); ?>" target="_blank" rel="noopener"><?php echo esc_html('Création IDCOMWEB','idcomcrea'); ?></a>
-                            <span class="separator">|</span>
-                            <?php idcom_copyright(); ?>
-                            <span class="separator">|</span>
-                            <a href="<?php echo get_permalink(6); ?>"><?php echo esc_html('Mentions légales','idcomcrea'); ?></a>
-                            <span class="separator">|</span>
-                            <a href="<?php echo get_permalink(3); ?>"><?php echo esc_html('Confidentialité','idcomcrea'); ?></a>
+                            <div class="credits-text">
+                                <a class="link-website-creator" href="<?php echo esc_url('https://www.groupe-idcom.fr'); ?>" target="_blank" rel="noopener"><?php echo esc_html('Création Site internet : www.groupe-idcom.fr','idcomcrea'); ?></a>
+                                <span class="separator first">|</span>
+                                Copyright <?php idcom_copyright(); ?>
+                                <span class="separator">|</span>
+                                <a href="<?php echo get_permalink(6); ?>"><?php echo esc_html('Mentions légales','idcomcrea'); ?></a>
+                            </div>
                         </p>
+                        
                     </div>
                 </div>
             </div>
@@ -88,6 +176,7 @@ global $ID;
         </div>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/ie10-viewport-bug-workaround.js"></script>
+       
         <?php
         
         if($site_data['barba']){
@@ -99,10 +188,18 @@ global $ID;
             wp_enqueue_script('nobarba', get_template_directory_uri().'/js/nobarba.js', array ('jquery'), IDCOMv, true);
 
         }
+
+        
+
         
         wp_footer();
         
         ?>
+        <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/imagesloaded.pkgd.min.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/isotope.pkgd.min.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/infinite-scroll.pkgd.min.js"></script>
+        
+        
         <!-- PhotoSwipe -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="pswp__bg"></div>

@@ -60,11 +60,22 @@ while($q->have_posts()){
         
     $item = '<div class="swiper-slide">
     <a href="'.get_the_permalink().'" class="picture" title="'.get_the_title().'">
-        '.get_the_post_thumbnail(get_the_ID(), 'medium', array('class' => 'imgcrop')).'
+        '.get_the_post_thumbnail(get_the_ID(), 'large', array('class' => 'imgcrop')).'
         <div class="data">
-            <h3 class="fakeh6 text-center">'.get_the_title().'</h3>
+           
+        </div>
+        <div class="heading position-relative">
+            <div class="d-flex justify-content-left align-items-baseline">
+              
+                <h6>Article / '.get_the_date('d.m.Y') .'</h6>
+            </div>
+            <div class="d-flex justify-content-left align-items-baseline">
+               
+                <h3 class="">'.get_the_title().'</h3>
+            </div>
         </div>
     </a>
+    
 </div>';
     
     $slider .= $item;
@@ -82,7 +93,7 @@ if($slider != ''){
     <div class="<?php echo $container; ?>">
         <div class="row">
             <div class="col-12">
-                <h2 class="section-title fakeh5 text-center ph32"><?php echo $title; ?></h2>
+                <h2 class="section-title text-center related-posts"><?php echo $title; ?></h2>
             </div>
         </div>
         <div class="row">

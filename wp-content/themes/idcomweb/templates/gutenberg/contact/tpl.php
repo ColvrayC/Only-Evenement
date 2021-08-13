@@ -69,13 +69,12 @@ if(have_rows('header_imgs')){
 
                     <div class="info">
                         <h4 class="title">Email</h4>
-                        <span><?= $site_data['email'] ?></span>
+                        <a href="mailto:<?php echo $site_data['email'] ?>"><?php echo $site_data['email']?></a>
                     </div>
 
                     <div class="info">
                         <h4 class="title">Téléphone</h4>
-                        <div><?= $site_data['tel'] ?></div>
-                        <div><?= $site_data['mobile'] ?></div>
+                        <a href="tel:<?php echo $site_data['mobile'] ?>"><?php echo $site_data['mobile']?></a>
                         
                     </div>
 

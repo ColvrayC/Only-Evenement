@@ -124,6 +124,7 @@ function idcomInit(){
 
                         }
 
+
                     });
 
                 }
@@ -218,21 +219,21 @@ function idcomInit(){
         /**
         * Main menu
         */
-        $('.header-menu > ul > li').mainMenu();
+        jQuery('.header-menu > ul > li').mainMenu();
 
-        $('.header-menu').mobileMenu();
+        jQuery('.header-menu').mobileMenu();
 
-        if($('#hamburger').is(':visible')){
+        if(jQuery('#hamburger').is(':visible')){
 
-            $('#hamburger').click(function(){
+            jQuery('#hamburger').click(function(){
 
-                $('.header-menu > ul').addClass('visible');
+                jQuery('.header-menu > ul').addClass('visible');
 
             });
 
-            $('.header-menu > ul #close-menu').click(function(){
+            jQuery('.header-menu > ul #close-menu').click(function(){
 
-                $('.header-menu > ul').removeClass('visible');
+                jQuery$('.header-menu > ul').removeClass('visible');
 
             });
 
@@ -463,4 +464,64 @@ function idcomInit(){
         
     });
     
+    /* Insert logo in middle */ 
+    jQuery(document).ready(function() {
+        var i = 1;
+        var middle = Math.round(Math.floor(jQuery("#menu-menu-principal li").length / 2));
+        $('ul li').each(function() {
+            if(i == middle) {
+                var outerHTML = $("#logo-wrapper").prop("outerHTML");
+                $("#logo-wrapper")[0].remove();
+                jQuery(this).after(outerHTML);
+            }
+            i++;
+        });
+    });
+
+    jQuery( function() {
+        // now doc is ready, make selection
+        // use another selector, not .isotope,
+        // since that is dynamically added in Isotope v1
+        var $grid = jQuery('#realisations .grid-isotope');
+        // use imagesLoaded, instead of window.load
+        $grid.imagesLoaded( function() {
+            $grid.isotope({
+                itemSelector: '.realisation',
+                layoutMode: 'fitRows',
+                initLayout: true
+            });
+            jQuery('#realisations .categories').on( 'click', 'button', function() {
+                var filterValue = jQuery( this ).attr('data-filter');
+                $grid.isotope({ filter: filterValue });
+            });
+            jQuery('#realisations .categories').each( function( i, buttonGroup ) {
+                var $buttonGroup = jQuery( buttonGroup );
+                $buttonGroup.on( 'click', 'button', function() {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    jQuery( this ).addClass('is-checked');
+                });
+            });
+        })
+    });
+
+    /*jQuery('#realisations .grid-isotope').infiniteScroll({
+        path: ".next",
+        append: '.realisation',
+        status: '.scroller-status',
+        history: false,
+        scrollThreshold: false,
+        button: '.next',
+        debug: true
+    });
+
+
+    $grid.on( 'load.infiniteScroll', function( event, response, path ) {
+        var $items=jQuery(response).find('.realisation');
+            $items.imagesLoaded( function() {
+                $grid.append( $items );
+                $grid.isotope( 'insert', $items );
+        });
+    });*/
+
+        
 }

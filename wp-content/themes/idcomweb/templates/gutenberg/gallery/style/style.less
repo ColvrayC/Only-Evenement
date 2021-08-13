@@ -3,95 +3,107 @@
 
 body{
     
-    main {
-        
-        .section.gallery {
-            position: relative;
-            .heading {
-                .transition(.25s);
-                display: block;
-                position: relative;
-                width: 100%;
-                .pretitle {
-                    color: @hi;
+    main {  
+        #realisations{
+            .introduction{
+                h2{
+                    text-align: center;
+                    margin-top: 4rem;
+                    color:@black;
                 }
-                h2 {
-                    font-weight: 600;
+                p{
+                    text-align: center;
+                    max-width: 600px;
+                    margin-left: auto!important;
+                    margin-right: auto!important;
+                    color: @de;
+                    margin-bottom: 5rem;
                 }
             }
-            .img-gallery {
-                .transition(.25s);
-                display: block;
-                position: relative;
-                width: 100%;
-                > .picture {
-                    .transition(.25s);
+            .grid-gallery{
+                
+                .realisation{
                     display: inline-block;
-                    position: relative;
-                    width: calc(~'25% - 20px');
-                    margin: 10px;
-                    cursor: pointer;
-                    > .img {
-                        .transition(.25s);
-                        display: block;
-                        position: relative;
-                        width: 100%;
-                        height: 320px;
-                        margin: 0;
-                        overflow: hidden;
-                        > img {
-                            .transition(.25s);
-                        }
-                        > .overlay {
-                            .transition(.25s);
-                            display: block;
-                            position: absolute;
-                            width: 100%;
-                            height: 100%;
-                            top: 0;
-                            left: 0;
-                            background: fade(@ab, 80%);
-                            opacity: 0;
-                            > i {
-                                .transition(.25s);
-                                display: block;
-                                position: absolute;
-                                top: -50%;
-                                left: 50%;
-                                transform: translate(-50%,-50%);
-                                font-size: 32px;
-                                color: @white;
-                            }
-                        }
+                    transform: scale(0.95);  
+                    img{
+                        height: 360px;
                     }
-                    > figcaption {
-                        .transition(.25s);
-                        display: block;
+                }
+
+                .overlay-gallery{
                         position: absolute;
+                        background: #b78f7dab;
                         width: 100%;
-                        bottom: 0;
-                        left: 0;
+                        height:100%;
+                        top: 0;
                         opacity: 0;
-                    }
-                }
-                > .picture:hover {
-                    > .img {
-                        > img {
-                            .agrandir(1.2,1.2);
-                        }
-                        > .overlay {
+                        &:hover{
                             opacity: 1;
-                            > i {
-                                top: 50%;
-                            }
                         }
-                    }
-                }
-                > .picture.down {
-                    transform: translateY(50px);
+                        .categorie{
+                            color: #ffffff94;
+                            position: absolute;
+                            bottom: 23px;
+                            left: 25px;
+                            font-family: 'montserrat', sans-serif;
+                            text-transform: uppercase;
+                            font-size: 12px;
+                            
+                        }
+                        .intitule{
+                            color:@white;
+                            position: absolute;
+                            bottom: 49px;
+                            left: 25px;
+                            font-family: 'montserrat',sans-serif;
+                            font-weight: 400;
+                            font-size: 17px;
+                        }
                 }
             }
-        }
+            .categories{
+                margin-bottom: 2.5rem;
+                text-align: center;
+                button{
+                    background: transparent;
+                    border: none;
+                    text-transform: uppercase;
+                    font-family: 'montserrat',sans-serif;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    padding: 0% 2%;
+                    font-weight: 500;
+                    &:focus{
+                        outline: none;
+                        font-weight: 600;
+                        color:@bc
+                    }
+                }
+
+            }
+            .la-pagination{
+                margin-top: 1.5rem;
+                a{
+                    text-align: center;
+                    color: @black;
+                    letter-spacing: 1px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    border-bottom: 3px solid @bc;
+                    text-decoration: none;
+                    &:hover{
+                        color:@bc;
+                        border-bottom: 3px solid @black;
+                    }
+                }
+            }
+            .scroller-status{
+                text-align: center;
+                opacity: 0;
+                margin-bottom: 3rem;
+            }
+         
+       }
         
     }
     
