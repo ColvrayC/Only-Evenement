@@ -48,6 +48,9 @@ $vertical_align_img =  get_field('vertical_align_img');
 
 $img_before              = get_field('img_before');
 
+$quote              = get_field('quote');
+
+
 $icons = array(
     'calendrier'    => 'fas fa-calendar-alt',
     'utilisateur'   => 'fas fa-user',
@@ -81,15 +84,15 @@ if($right){
 <section id="<?php echo esc_html($id); ?>" class="section dyptich-text ph56 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.75s">
     <div class="container">
         <div class="row">
-            <div class="<?php echo $lft; ?> <?php if($img_before) : ?> order-lg-1 order-2 <?php endif; ?>">
-                <?php if($pretitle != '') : ?>
-                <span class="pretitle wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s">
+            <div class="<?php echo $lft; ?> <?php if($img_before) : ?> order-lg-1 order-2 <?php endif; ?>  text-center text-lg-start ">
+                <?php if($quote) : ?>
+                <span class="quote  fadeIn" data-wow-duration="0.5s" data-wow-delay="0.85s">
                     <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/start-quote.png">    
-                    <?php echo $pretitle; ?>
+                    <span class="text-quote">Seul on va plus vite, ensemble on va plus loin</span>
                     <img src="<?= home_url(); ?>/wp-content/uploads/2021/07/end-quote.png"/>
                 </span>
                 <?php endif; ?>
-                <div class="data">
+                <div class="data <?php if($quote) : ?> mt-5 <?php endif; ?>">
                     
                     <h2 class=" wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s"><?php echo $title; ?></h2>
                     <div class="desc wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.95s">
@@ -115,8 +118,8 @@ if($right){
             </div>
             <div class="<?php echo $rgt; ?> <?php if($img_before) : ?> order-lg-2 order-1 mb-5 <?php endif; ?>">
                         
-                <div class="pictures <?php if($vertical_align_img) : ?> d-lg-flex align-items-lg-center d-xl-block<?php else : ?><?php endif; ?>">
-                    <div class="big-img wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.05s">
+                <div class="pictures  <?php if($quote) : ?> pictures-space <?php endif; ?><?php if($vertical_align_img) : ?> d-lg-flex align-items-lg-center d-xl-block<?php else : ?><?php endif; ?>">
+                    <div class="big-img <?php if($quote == false) : ?> big-img-quote <?php endif; ?> wow fadeIn<?php echo $imgwow; ?>" data-wow-duration="0.5s" data-wow-delay="1.05s">
                         <img src="<?php echo esc_url($big['url']); ?>" alt="<?php echo esc_html($big['alt']); ?>" class="imgcrop"/>
                     </div>
                     
@@ -131,7 +134,7 @@ if($right){
 
                    
                 </div>
-                <img class="img-spotted" src="<?= home_url(); ?>/wp-content/uploads/2021/08/tache-2.png"/>
+                <img class="img-spotted  <?php if($quote) : ?> img-spotted-quote <?php endif; ?>" src="<?= home_url(); ?>/wp-content/uploads/2021/08/tache-2.png"/>
             </div>
             
         </div>

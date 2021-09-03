@@ -41,28 +41,30 @@ $img_before    = get_field('img_before');
 
 $container_text = '';
 $testimonials_slider     = '';
+$testimonials_query_args = [
+    'post_type' => 'temoignages',
+    'post_status' => 'publish',
+    'posts_per_page' => 5,
+];
+$testimonials_query_args = new WP_Query($testimonials_query_args);
+if ($testimonials_query_args->have_posts()) {
+    while ($testimonials_query_args->have_posts()) {
+        $testimonials_query_args->the_post();
 
-if(have_rows('testimonials_slider')){
-    
-    while(have_rows('testimonials_slider')){
+        $name   =  get_field('name', get_the_ID());
+        $text    = get_field('text', get_the_ID());
         
-        the_row();
-        $name = get_sub_field('name');
-        $desc = get_sub_field('desc');
-
-        
-        $item_slider = 
+        $item_slider =
         '
-            <div class="swiper-slide"> 
-            <div class="content-quote">
-                <img class="quote" src="'.home_url().'/wp-content/uploads/2021/08/white-quotepng.png"/>
-                </div>
-                <p>'.esc_html($desc).'</p>
-
-                <div class="name">'.esc_html($name).'</div>
+        <div class="swiper-slide"> 
+        <div class="content-quote">
+            <img class="quote" src="'.home_url().'/wp-content/uploads/2021/08/white-quotepng.png"/>
             </div>
-        ';
+            <p>'.$text.'</p>
 
+            <div class="name">'.$name.'</div>
+        </div>
+        ';
         $testimonials_slider .= $item_slider;
     }
 }

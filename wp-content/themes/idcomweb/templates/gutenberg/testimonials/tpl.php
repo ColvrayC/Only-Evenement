@@ -12,21 +12,22 @@ global $ID;
 
 global $site_data;
 
-$id     = get_field('id');
+$testimonials_query_args = [
+    'post_type' => 'temoignages',
+    'post_status' => 'publish',
+];
 
+$testimonials_query_args = new WP_Query($testimonials_query_args);
 $testimonials      = '';
+if ($testimonials_query_args->have_posts()) {
+    while ($testimonials_query_args->have_posts()) {
+        $testimonials_query_args->the_post();
 
-if(have_rows('testimonials')){
-
-    while(have_rows('testimonials')){
-    
-        the_row();
-
-        $name   = get_sub_field('name');
-        $text    = get_sub_field('text');
+        $name   =  get_field('name', get_the_ID());
+        $text    = get_field('text', get_the_ID());
             
         $item = ' 
-            <div id="testimonial-'.$id.'" class="col-12 col-md-6 col-lg-4">
+            <div id="" class="col-12 col-md-6 col-lg-4">
                 <div class="content-quote mx-auto">
                     <img src="'. home_url().'/wp-content/uploads/2021/08/quote-large.png">
                 </div>
@@ -41,9 +42,11 @@ if(have_rows('testimonials')){
             </div>';
 
         $testimonials .= $item;
-        
-    }   
+
+       
+    }
 }
+$id     = get_field('id');
 ?>
 <section id="<?php echo esc_html($id); ?>" class="section testimonials wysiwyg wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1.25s">
    
@@ -58,6 +61,7 @@ if(have_rows('testimonials')){
         <img class="img-bg img-bg-left" src="<?= home_url()?>/wp-content/uploads/2021/08/feuilles.png">
         <img class="img-bg img-bg-right" src="<?= home_url()?>/wp-content/uploads/2021/08/trait.png">
         <!-- End images background -->
+       
     </div>
    
 </section>

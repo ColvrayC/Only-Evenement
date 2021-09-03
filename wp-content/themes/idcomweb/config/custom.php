@@ -114,6 +114,61 @@ function idcom_get_global_site_data(){
 
 $site_data = idcom_get_global_site_data();
 
+
+/* CPT */
+function testimonials_register_post_types() {
+	 // CPT Portfolio
+     $labels = array(
+        'name' => 'temoignages',
+        'all_items' => 'Tous les témoignages',  // affiché dans le sous menu
+        'singular_name' => 'Témoignage',
+        'add_new_item' => 'Ajouter un témoignage',
+        'edit_item' => 'Modifier un témoignage',
+        'menu_name' => 'Témoignages'
+    );
+
+	$args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array( 'title', 'editor' ),
+        'rewrite' => array( 'slug' => 'temoignages'),
+        'menu_position' => 5, 
+        'menu_icon' => 'dashicons-editor-quote',
+	);
+
+	register_post_type( 'temoignages', $args );
+}
+add_action( 'init', 'testimonials_register_post_types' );
+
+
+
+function gallery_register_post_types() {
+    // CPT Portfolio
+    $labels = array(
+       'name' => 'Galerie',
+       'all_items' => 'Voir la galerie',  // affiché dans le sous menu
+       'singular_name' => 'Galerie',
+       'add_new_item' => 'Ajouter une image',
+       'menu_name' => 'Galerie'
+   );
+
+   $args = array(
+       'labels' => $labels,
+       'public' => true,
+       'show_in_rest' => true,
+       'has_archive' => true,
+       'supports' => array( 'title', 'editor' ),
+       'menu_position' => 6, 
+       'menu_icon' => 'dashicons-format-gallery',
+   );
+
+   register_post_type( 'galerie', $args );
+}
+add_action( 'init', 'gallery_register_post_types' );
+
+/* End CPT */
 /**
  * Prise en charge du téléversement de fichiers au format .svg
  */

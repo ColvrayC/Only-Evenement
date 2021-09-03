@@ -285,10 +285,10 @@
 /* Site fonts */
 
 @titlefont: 'Amiri-font', sans-serif;
-@titlefonth1: 48px;
-@titlefonth2: 43px;
+@titlefonth1: 43px;
+@titlefonth2: 39px;
 @titlefonth3: 33px;
-@titlefonth4: 17px;
+@titlefonth4: 15px;
 @titlefonth5: 15px;
 @titlefonth6: 14px;
 @titlefont100: 100;
@@ -306,7 +306,7 @@
 @menufont700: 700;
 @menufont900: 900;
 @textfont: 'Montserrat', sans-serif;
-@textfontsize: 16px;
+@textfontsize: 14px;
 @textfont100: 100;
 @textfont300: 300;
 @textfont400: 400;
@@ -452,7 +452,8 @@ body {
     /* Buttons */
     p{
         font-weight: 300;
-        letter-spacing: 0.5px;
+        letter-spacing: 2px;
+        line-height: 24px;
         margin-bottom: 40px;
     }
     .btn {
@@ -703,7 +704,74 @@ body {
     .idcom-required {
         color: rgb(235,0,0);
     }
-    
+    /* CPT */
+
+    .form-cpt{
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            .transition(.25s);
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 8px 12px;
+            border: solid 1px @bc;
+            background: transparent;
+            outline: none;
+            color: @black;
+            margin-top: 10px;
+            font-family: @textfont;
+        }
+        input[type="submit"]{
+            background: #c68663 !important;
+            color: #ffffff !important;
+            border: solid 1px #c68663 !important;
+            width: 100% !important;
+            margin-top: 10px;
+            padding: 13px 53px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            line-height: 19px !important;
+            cursor: pointer;
+        }
+        label {
+            .transition(.25s);
+            display: block;
+            position: relative;
+            width: 100%;
+            margin-bottom: 22px;
+            font-size: 14px;
+            font-weight: 600;
+            color: @black;
+            margin-bottom: 7px;
+            margin-top: 26px;
+        }
+        .wp-editor-tools{display: none;}
+        .quicktags-toolbar{display: none;}
+        .acf-field[data-width]{
+            border:0px ;
+        }
+        .acf-field{
+            padding-left: 0px!important;
+            padding-right: 0px!important;
+            min-height: 100px!important;
+        }
+        .updated{
+            text-align: center;
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .acf-spinner{
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 21px;
+        }
+    }
     /* Contact Form 7 */
     .wpcf7-form {
         display: block;
@@ -760,6 +828,7 @@ body {
                 margin-top: 10px;
                 font-family: @textfont;
             }
+            
 
             textarea::placeholder,
             input::placeholder {

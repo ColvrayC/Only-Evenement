@@ -40,8 +40,16 @@
     body{
 
       
-
+        .top-header{
+            .mobile{
+                display: none;
+            }
+            >div{
+                top:5%;
+            }
+       }
         header{
+           
             /* Full logo */
             #full-md-logo {
                 .transition(.25s);
@@ -62,6 +70,8 @@
             
             /* Header main menu */
             .header-menu {
+                height: 100px;
+                align-items: center!important;
                 .title-hamburger{
                     margin-left: 0.5rem;
                 }
@@ -82,8 +92,13 @@
                     background: fade(@bc, 95%);
                     > #close-menu {
                         display: block;
+                        position: absolute;
+                        top: -90%;
+                        width: 100%;
                         i{
                             color:@black;
+                            position: absolute;
+                            right: 6%;
                         }
                     }
                     > li {
@@ -190,7 +205,7 @@
                 >a{
                     >img{
                         margin-top: 0px;
-                        max-width: 82px!important;
+                        max-width: 200px ;
                     }
                 }
                

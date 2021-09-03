@@ -122,6 +122,7 @@ idcom_count_views();
 
     <?php wp_head(); ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?> data-barba="wrapper">
@@ -132,11 +133,11 @@ idcom_count_views();
             <div class="d-flex flex-row-reverse px-0">
                 <!-- CTA Phone -->
                 <div class="py-2 px-4 cta-phone">
-                    <a href="tel:<?php echo $site_data['mobile'] ?>"><i class="fas fa-phone-volume me-2"></i><?php echo $site_data['mobile']?></a>
+                    <a href="tel:<?php echo $site_data['mobile'] ?>"><i class="fas fa-phone-volume me-2"></i><span class="mobile"><?php echo $site_data['mobile']?></span></a>
                 </div>
 
                 <!-- Social share buttons -->
-                <div class="p-2">
+                <div class="p-2 social-btn">
                     <?php if($site_data['facebook'] != '') : ?>
 
                     <a href="<?php echo esc_url($site_data['facebook']); ?>" class="right-btn" title="<?php echo esc_html('Facebook'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>

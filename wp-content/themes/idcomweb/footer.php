@@ -13,14 +13,18 @@ global $ID;
 ?>
         </main>
         <footer>
-            <div class="content-logos container">
+            <div class="content-logos container mt-0">
                 <div class="d-flex justify-content-center align-items-center flex-wrap">
                     <img class="" src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-onlyday.png"/>
                     <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-coaching-mariage-2.jpg"/>
-                    <img class="logo-letters" src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-mariage-net.png"/>
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-coaching-expert.png"/>
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-zank-you.png"/>
                     
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-coaching-expert.png"/>
+                    
+                    
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-wrap">
+                    <img class="logo-letters" src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-mariage-net.png"/>
+                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/08/logo-footer-zank-you.png"/>
                 </div>
             </div>
             <div class="content-footer">
@@ -49,7 +53,7 @@ global $ID;
                         <div class="col-12 col-md-6 col-lg-3 px-0 px-md-2 pt-5">
                             <div class="footer-menu wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.05s">
                                 <div class="fm-title">
-                                    <h5 class="title-color-second">Officiante de cérémonie</h5>
+                                    <h5 class="title-color-second">Coaching mariage</h5>
                                 </div>
                                 <div class="fm-menu">
                                     <?php idcomtheme_footer_menu(31); ?>

@@ -20,6 +20,30 @@ body{
                     margin-bottom: 5rem;
                 }
             }
+            .dropdown-category{
+                border: 0;
+                background: transparent;
+                text-transform: uppercase;
+                border-bottom: 1px solid black;
+                cursor: pointer;
+                outline:0px;
+                &:focus{
+                
+                    outline:0px;
+                }
+               option{
+                    padding: 20px 20px;
+                    margin: 20px 20px;
+                    cursor: pointer;
+                    background-color: white;
+                    border-bottom: 1px solid black;
+                    outline: 1px;
+                    &:hover{
+                        background: black;
+                        color: white;
+                    }
+               }
+            }
             .grid-gallery{
                 
                 .realisation{
@@ -244,11 +268,25 @@ body{
         main {
 
             .section.gallery {
+               
                 .img-gallery {
                     > .picture {
                         width: calc(~'50% - 20px');
                         > .img {
                             height: 290px;
+                        }
+                    }
+                }
+            }
+            #realisations{
+                .grid-gallery{
+                    .realisation{
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        img{
+                            width: 100%;
+                            height: auto;
                         }
                     }
                 }

@@ -22,7 +22,7 @@ $img_right       = get_field('img_right');
 
 $shortcode       = get_field('shortcode');
 
-
+acf_form_head();
 ?>
 <section id="<?php echo esc_html($id); ?>" class="section testimonial-form mht96 mhb64 wow fadeIn pt-5" data-wow-duration="0.5s" data-wow-delay="1.25s">
     <div class="container-fluid">
@@ -36,11 +36,27 @@ $shortcode       = get_field('shortcode');
             <div class="col-12 col-md-8 col-lg-6 content-form mx-auto">
                 <div class="content right"> 
                     <h2><?= $title ?></h2>
-                    <div class="form">
-                        <?php echo do_shortcode($shortcode); ?>
+                    <div class="form form-cpt">
+                    <?php
+                        acf_form(array(
+                            'post_id'		=> 'new_post',
+                            'post_title'	=> false,
+                            'post_content'	=> false,
+                            
+                            'form' => true,
+                            'new_post'		=> array(
+                                'post_type'		=> 'temoignages',
+                                'post_status'	=> 'draft'
+                            ),
+                        //'return'		=> home_url('contact-form-thank-you'),
+                            'submit_value'	=> 'ENVOYER'
+                        ));
+                        ?>
                     </div>
                 </div>
             </div>
+
+            
             <div class="col-lg-3 d-none d-md-block">
             <img class="img-bg img-bg-right" src="<?= home_url()?>/wp-content/uploads/2021/08/tache-2.png">
             </div>

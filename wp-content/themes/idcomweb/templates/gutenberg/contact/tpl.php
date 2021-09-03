@@ -133,8 +133,9 @@ if(have_rows('header_imgs')){
             <div class="col-12 col-xxl-5">
                 <div class="content right"> 
                     <div class="form-title">
-                        <h2><?= $title?></h2>
+                        <h2 style="margin-bottom: 1rem !important;"><?= $title?></h2>
                         <hr>
+                        <h4 style="color:black" >Contactez-nous pour un devis gratuit et sans engagement, sur rendez-vous uniquement :</h4>
                     </div>
                     <div class="form mx-auto">
                         <?php echo do_shortcode($shortcode); ?>

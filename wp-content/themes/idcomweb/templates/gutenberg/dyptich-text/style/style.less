@@ -8,9 +8,13 @@ body{
         .section.dyptich-text {
             .transition(.25s);
             position: relative;
+
             h2{
                 color:@black!important;
                 margin-bottom: 30px;
+            }
+            .desc{
+                padding-right: 4rem;
             }
             .pretitle {
                 .transition(.25s);
@@ -24,17 +28,29 @@ body{
                 font-size: 31px;
                 color: black;
             }
+            .quote{
+                position: absolute;
+                top: -3rem;
+                .text-quote{
+                    font-family: 'Amiri', sans-serif;
+                    font-size: 32px;
+                    font-style: italic;
+                    padding: 0px 12px;
+                }
+                img{
+                    width: 1.5rem;
+                    vertical-align: super;  
+                }
+            }
 
             .data {
                 
-                .quote{
-                    
-                }
+
                 .transition(.25s);
                 display: block;
                 position: relative;
                 width: 100%;
-                margin-bottom: 40%;
+                margin-bottom: 5rem;
                 > .title {
                     .transition(.25s);
                     display: block;
@@ -70,7 +86,7 @@ body{
                 display: block;
                 position: relative;
                 width: 100%;
-                margin-top:-25%;
+                margin-top:-16%;
                 > .big-img {
                     .transition(.5s);
                     display: block;
@@ -83,6 +99,9 @@ body{
                     > img {
                         .transition(.5s);
                     }
+                }
+                >.big-img-quote{
+                    padding-top: 80%;
                 }
                 > .small-img {
                     .transition(.5s);
@@ -137,6 +156,9 @@ body{
                         }
                     }
                 }
+            }
+            .pictures-space{
+                margin-top: 0%!important;
             }
             .small-img-bg-content{
                 display: block;
@@ -193,6 +215,9 @@ body{
                 top: 25rem;
                 right: 7%;
                 z-index: -1;
+            }
+            .img-spotted-quote{
+                top: 32rem!important;
             }
         }
         
@@ -305,12 +330,20 @@ body{
     body{
         main{
             .section.dyptich-text {
+                .desc{
+                    padding-right: 0rem;
+                }
                 .content-btns{
                     display: block!important;
                     a{
                         width: 50%;
                     }
                 }
+                .quote{
+                    position: relative!important;
+                    top: unset!important;
+                }
+    
                 .data{
                     margin-bottom: 0!important;
                 }
@@ -374,6 +407,14 @@ body{
                 }
                 a{
                     width: 100%!important;
+                }
+                .quote{
+                    img{
+                        display: none;
+                    }
+                    .text-quote{
+                        font-size: 25px;
+                    }
                 }
                 .pictures {
                     > .small-txt {

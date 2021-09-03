@@ -233,7 +233,7 @@ function idcomInit(){
 
             jQuery('.header-menu > ul #close-menu').click(function(){
 
-                jQuery$('.header-menu > ul').removeClass('visible');
+                jQuery('.header-menu > ul').removeClass('visible');
 
             });
 
@@ -490,13 +490,14 @@ function idcomInit(){
                 layoutMode: 'fitRows',
                 initLayout: true
             });
-            jQuery('#realisations .categories').on( 'click', 'button', function() {
-                var filterValue = jQuery( this ).attr('data-filter');
+            jQuery('#realisations .categories').on('change', function() {
+                var filterValue = jQuery( this )[0].value;
+                console.log(filterValue);
                 $grid.isotope({ filter: filterValue });
             });
             jQuery('#realisations .categories').each( function( i, buttonGroup ) {
                 var $buttonGroup = jQuery( buttonGroup );
-                $buttonGroup.on( 'click', 'button', function() {
+                $buttonGroup.on( 'change', function() {
                     $buttonGroup.find('.is-checked').removeClass('is-checked');
                     jQuery( this ).addClass('is-checked');
                 });
